@@ -1,0 +1,359 @@
+/* ============================
+   БАЗОВЫЕ ПЕРЕМЕННЫЕ
+   Здесь можно изменить цвета, размеры и анимации
+============================ */
+
+:root {
+  --bg-page: #050712;           /* Цвет фона всей страницы */
+  --bg-slide-1: #050712;        /* Фон первого слайда */
+  --bg-slide-2: #080b1b;        /* Фон второго слайда */
+  --bg-slide-3: #0b1025;        /* Фон третьего слайда */
+  --bg-slide-4: #131018;        /* Фон четвёртого слайда */
+
+  --accent: #ffcf4a;            /* Основной акцентный цвет */
+  --accent-soft: rgba(255,207,74,0.25);
+
+  --text-main: #f7f7ff;
+  --text-muted: #9799bd;
+
+  --slide-transition-duration: 800ms; /* Длительность плавного появления слайда */
+  --scale-from: 1.03;                 /* Начальный масштаб слайда при появлении */
+}
+
+/* ============================
+   БАЗА
+============================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg-page);
+  color: var(--text-main);
+}
+
+/* Обёртка всей страницы */
+
+.page {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Подсказка сверху */
+
+.top-hint {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  padding: 6px 14px;
+  font-size: 13px;
+  background: rgba(5, 7, 18, 0.88);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--text-muted);
+  backdrop-filter: blur(12px);
+}
+
+/* ============================
+   СЛАЙДЫ
+============================ */
+
+.slide {
+  position: relative;
+  min-height: 100vh;         /* Каждый слайд не меньше высоты экрана */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 16px 64px;
+  opacity: 0;
+  transform: translateY(40px) scale(var(--scale-from));
+  filter: blur(8px);
+  transition:
+    opacity var(--slide-transition-duration) ease-out,
+    transform var(--slide-transition-duration) ease-out,
+    filter var(--slide-transition-duration) ease-out;
+}
+
+/* Фон для каждого слайда */
+
+.slide--1 {
+  background:
+    radial-gradient(circle at top, #222852 0, var(--bg-slide-1) 55%);
+}
+
+.slide--2 {
+  background:
+    radial-gradient(circle at top, #222852 0, var(--bg-slide-2) 55%);
+}
+
+.slide--3 {
+  background:
+    radial-gradient(circle at top, #222852 0, var(--bg-slide-3) 55%);
+}
+
+.slide--4 {
+  background:
+    radial-gradient(circle at top, #412417 0, var(--bg-slide-4) 55%);
+}
+
+/* Активный слайд: применяется из JS через класс .slide--active */
+
+.slide--active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* Внутренний контейнер слайда */
+
+.slide__inner {
+  width: 100%;
+  max-width: 900px;
+  padding: 26px 22px 28px;
+  border-radius: 24px;
+  background: rgba(5, 7, 18, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Маленькая надпись "Слайд 1" */
+
+.slide__eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin: 0 0 6px;
+}
+
+/* Заголовки */
+
+.slide__title {
+  margin: 0 0 16px;
+  font-size: clamp(26px, 4vw, 34px);
+  line-height: 1.2;
+}
+
+/* Обычный текст */
+
+.slide__text {
+  margin: 0 0 18px;
+  font-size: 16px;
+  color: var(--text-muted);
+  max-width: 640px;
+}
+
+/* ============================
+   СЛАЙД 2 — ШАГИ
+============================ */
+
+.steps {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.steps__item {
+  position: relative;
+  padding: 10px 12px 10px 34px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-main);
+  font-size: 15px;
+  overflow: hidden;
+}
+
+.steps__item::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+  transform: translateY(-50%) scale(0.8);
+  transition: transform 300ms ease-out;
+}
+
+/* Когда второй слайд активен — слегка "подпрыгивают" маркеры */
+
+.slide--2.slide--active .steps__item::before {
+  transform: translateY(-50%) scale(1);
+}
+
+/* ============================
+   СЛАЙД 3 — НАВЫКИ
+============================ */
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.skills__item {
+  border-radius: 16px;
+  padding: 14px 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Лёгкая подсветка при активном третьем слайде — анимация волн */
+
+.slide--3.slide--active .skills__item::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 0 0, var(--accent-soft), transparent 55%);
+  animation: skillsGlow 4s infinite linear;
+  opacity: 0.25;
+}
+
+/* Закрашиваем текст поверх подсветки */
+
+.skills__item h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+
+.skills__item p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* Анимация мягкого движения подсветки */
+
+@keyframes skillsGlow {
+  0% {
+    transform: translate(-20%, -10%);
+  }
+  50% {
+    transform: translate(20%, 10%);
+  }
+  100% {
+    transform: translate(-20%, -10%);
+  }
+}
+
+/* ============================
+   СЛАЙД 4 — CTA / КОНТАКТЫ
+============================ */
+
+.cta-card {
+  margin-top: 12px;
+  padding: 16px 14px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #221a0c, #101325);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-card::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background:
+    radial-gradient(circle at 0 0, var(--accent-soft), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.08), transparent 60%);
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 800ms ease-out;
+}
+
+/* Когда последний слайд активен — включаем мягкий фон */
+
+.slide--4.slide--active .cta-card::before {
+  opacity: 1;
+}
+
+.cta-card__text {
+  margin: 0 0 14px;
+  font-size: 15px;
+  color: var(--text-main);
+}
+
+.cta-card__row {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.cta-card__row + .cta-card__row {
+  margin-top: 6px;
+}
+
+.cta-card__row a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.cta-card__row a:hover {
+  text-decoration: underline;
+}
+
+/* ============================
+   ФУТЕР
+============================ */
+
+.footer {
+  padding: 24px 16px 32px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  background: #050712;
+}
+
+/* ============================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ
+============================ */
+
+@media (max-width: 768px) {
+  .slide {
+    padding-top: 96px;
+  }
+
+  .slide__inner {
+    padding: 20px 16px 22px;
+  }
+
+  .steps__item {
+    font-size: 14px;
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+  }
+
+  .top-hint {
+    max-width: 90%;
+    text-align: center;
+  }
+}

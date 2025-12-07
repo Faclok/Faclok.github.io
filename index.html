@@ -2,568 +2,67 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Твой первый сайт за вечер</title>
+  <title>Материалы курса — Первый сайт за вечер</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-  --bg: #05040a;
-  --card-border: rgba(255, 255, 255, 0.08);
-  --accent: #f4b942;
-  --accent-soft: rgba(244, 185, 66, 0.15);
-  --accent-strong: #ffdd7a;
-  --text-main: #f7f7ff;
-  --text-muted: #a5a7b7;
-  --danger: #ff6476;
-  --input-bg: rgba(8, 8, 20, 0.95);
-  --input-border: rgba(255, 255, 255, 0.18);
-  --radius-lg: 26px;
-  --shadow-soft: 0 22px 70px rgba(0, 0, 0, 0.75);
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-body {
-  min-height: 100vh;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "Inter", "Segoe UI", sans-serif;
-  background:
-    radial-gradient(circle at top left, #18182a 0, transparent 55%),
-    radial-gradient(circle at bottom right, #201b33 0, transparent 55%),
-    var(--bg);
-  color: var(--text-main);
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  overflow-x: hidden;
-  font-size: 16px;
-}
-
-/* шум */
-
-.noise {
-  pointer-events: none;
-  position: fixed;
-  inset: -60px;
-  opacity: 0.16;
-  z-index: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='4' stitchTiles='noStitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
-  mix-blend-mode: soft-light;
-}
-
-main {
-  position: relative;
-  z-index: 1;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 32px;
-}
-
-/* карточка */
-
-.hero {
-  position: relative;
-  width: 100%;
-  max-width: 1200px; /* комфортно на 1920x1080 */
-  min-height: 420px;
-  margin: 0 auto;
-  background: radial-gradient(circle at top left, #171725 0, #05040a 60%);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--card-border);
-  box-shadow: var(--shadow-soft);
-  padding: 32px 420px 28px 32px; /* справа резерв под Stark */
-  overflow: hidden;
-  isolation: isolate;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  border-radius: calc(var(--radius-lg) - 1px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  pointer-events: none;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  right: 40px;
-  top: -40px;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(244, 185, 66, 0.24), transparent 70%);
-  filter: blur(4px);
-  opacity: 0.85;
-  pointer-events: none;
-}
-
-/* шильдик */
-
-.label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 5px 14px 5px 8px;
-  border-radius: 999px;
-  background: radial-gradient(circle at top left, #252031, #14121f);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent-strong);
-  margin-bottom: 20px;
-}
-
-.label-dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 30%, #fff6d7, #f4b942);
-  box-shadow: 0 0 18px rgba(244, 185, 66, 0.8);
-}
-
-/* подзаголовок */
-
-.sub {
-  font-size: 26px;
-  line-height: 1.35;
-  font-weight: 560;
-  margin-bottom: 22px;
-  max-width: 560px;
-}
-
-.mini-title {
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 12px;
-}
-
-/* список шагов */
-
-.hero ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.hero li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 15px;
-  line-height: 1.4;
-  color: var(--text-muted);
-}
-
-.bullet {
-  min-width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle at 30% 30%, #ffebbc, #f4b942);
-  color: #2c2210;
-  font-size: 13px;
-  font-weight: 600;
-  box-shadow: 0 10px 24px rgba(244, 185, 66, 0.6);
-}
-
-/* форма */
-
-.form {
-  margin-top: 6px;
-}
-
-.form-row {
-  display: flex;
-  gap: 12px;
-  align-items: stretch;
-  margin-bottom: 8px;
-}
-
-.input {
-  flex: 1;
-  padding: 13px 16px;
-  border-radius: 999px;
-  border: 1px solid var(--input-border);
-  background: var(--input-bg);
-  color: var(--text-main);
-  font-size: 15px;
-  outline: none;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease,
-    background 0.15s ease;
-}
-
-.input::placeholder {
-  color: rgba(165, 167, 183, 0.85);
-}
-
-.input:focus {
-  border-color: var(--accent-strong);
-  box-shadow: 0 0 0 1px rgba(244, 185, 66, 0.7);
-  background: rgba(6, 6, 18, 0.96);
-}
-
-.btn {
-  border: none;
-  border-radius: 999px;
-  padding: 0 22px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
-  background: linear-gradient(135deg, #f4b942, #ffdd7a);
-  color: #20140b;
-  box-shadow: 0 12px 32px rgba(244, 185, 66, 0.65);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 16px 40px rgba(244, 185, 66, 0.8);
-  filter: brightness(1.04);
-}
-
-.btn:active {
-  transform: translateY(0);
-  box-shadow: 0 8px 22px rgba(244, 185, 66, 0.6);
-}
-
-.err {
-  min-height: 18px;
-  font-size: 12px;
-  color: var(--danger);
-  margin-bottom: 4px;
-}
-
-.note {
-  font-size: 12px;
-  line-height: 1.55;
-  color: var(--text-muted);
-  max-width: 480px;
-}
-
-.note strong {
-  color: var(--accent-strong);
-  font-weight: 600;
-}
-
-/* стикер-скотч */
-
-.tape {
-  position: absolute;
-  right: 420px;
-  top: 22px;
-  transform: rotate(3deg);
-  padding: 5px 16px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  background: #f6e4b3;
-  color: #3b3019;
-  border-radius: 6px;
-  box-shadow:
-    0 10px 26px rgba(0, 0, 0, 0.75),
-    inset 0 0 0 1px rgba(0, 0, 0, 0.14);
-  mix-blend-mode: screen;
-}
-
-/* Stark справа */
-
-.stark-wrap {
-  position: absolute;
-  right: 40px;
-  bottom: 26px;
-  height: 100%;
-  width: 340px;          /* ширина задаётся жёстко */
-  pointer-events: none;
-}
-
-.stark {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  min-height: 350px;
-  overflow: visible;
-  display: block;
-  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.85));
-  transform: translateY(0);
-  transition: transform 0.45s ease;
-}
-
-.hero:hover .stark {
-  transform: translateY(-4px);
-}
-
-/* подпись-пилюля под Stark */
-
-.tag-pill {
-  position: absolute;
-  right: 60px;
-  bottom: 24px;
-  transform: translateY(100%) translateY(-8px);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 12px 5px 7px;
-  font-size: 11px;
-  border-radius: 999px;
-  background: rgba(4, 10, 20, 0.98);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--text-main);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.85);
-}
-
-.tag-dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 30%, #bbf7d0, #22c55e);
-  box-shadow: 0 0 14px rgba(34, 197, 94, 0.85);
-}
-
-/* адаптив */
-
-@media (max-width: 1200px) {
-  .hero {
-    padding-right: 360px; /* чуть меньше резерва */
-  }
-
-  .tape {
-    right: 360px;
-  }
-
-  .stark-wrap {
-    width: 300px;
-  }
-}
-
-@media (max-width: 960px) {
-  main {
-    padding: 20px;
-  }
-
-  .hero {
-    padding: 22px 18px 20px;
-    max-width: 640px;
-    min-height: auto;
-  }
-
-  .sub {
-    font-size: 20px;
-    max-width: none;
-  }
-
-  .hero ul {
-    gap: 8px;
-  }
-
-  .hero li {
-    font-size: 14px;
-  }
-
-  .form-row {
-    flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-    justify-content: center;
-    padding-block: 12px;
-  }
-
-  /* Stark и подписи становятся блоками под текстом */
-
-  .tape {
-    position: static;
-    display: inline-flex;
-    margin-top: 10px;
-    margin-bottom: 12px;
-    transform: rotate(0);
-  }
-
-  .stark-wrap {
-    position: static;
-    width: min(260px, 70%);
-    margin: 18px auto 8px;
-    pointer-events: none;
-  }
-
-  .tag-pill {
-    position: static;
-    transform: none;
-    margin: 0 auto;
-    margin-bottom: 4px;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  main {
-    padding: 14px;
-  }
-
-  .hero {
-    border-radius: 20px;
-    padding: 18px 14px 18px;
-  }
-
-  .label {
-    font-size: 11px;
-  }
-
-  .sub {
-    font-size: 18px;
-  }
-
-  .note {
-    font-size: 11px;
-  }
-
-  .tape {
-    font-size: 10px;
-  }
-
-  .tag-pill {
-    font-size: 10px;
-  }
-}
-
-  </style>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <div class="noise"></div>
-  <main>
-    <section class="hero">
-          <div class="label">
-            <span class="label-dot"></span>
-            <span>Инструкция за 750 ₽</span>
-          </div>
 
-          <div class="sub" id="headline">
-            Соберёшь свой первый сайт за вечер и получишь ссылку, которой не стыдно делиться.
-          </div>
+  <header class="hero">
+    <h1>Материалы для разработки и обучения</h1>
+    <p>Здесь собраны ТЗ для дизайнеров и шаблоны сайтов, которые получают ученики после оплаты.</p>
+  </header>
 
-          <div class="mini-title">Что будет за один вечер</div>
-          <ul>
-            <li>
-              <div class="bullet">1</div>
-              <span>Повторишь простые шаги и соберёшь страницу по шаблону.</span>
-            </li>
-            <li>
-              <div class="bullet">2</div>
-              <span>Получишь рабочую ссылку, которую можно кинуть друзьям или в резюме.</span>
-            </li>
-            <li>
-              <div class="bullet">3</div>
-              <span>Поймёшь на опыте, что «сделать сайт» — уже в твоём диапазоне.</span>
-            </li>
-          </ul>
+  <section class="block">
+    <h2>Технические задания</h2>
+    <p class="desc">Два уровня сложности: 750₽ — базовый лендинг. 1900₽ — расширенный продукт с анимациями и сложными сценариями.</p>
 
-          <form class="form" id="leadForm">
-            <div class="form-row">
-              <input
-                id="telegramHandle"
-                class="input"
-                type="text"
-                name="telegram"
-                placeholder="@твой_telegram"
-                autocomplete="off"
-              />
-              <button class="btn" type="submit">
-                Получить инструкцию
-              </button>
-            </div>
-            <div class="err" id="errorMsg"></div>
-            <div class="note">
-              Оставь <strong>@ник</strong> — я пришлю в Telegram ссылку на оплату 750 ₽ и доступ к инструкции. Без мотивационного спама.
-            </div>
-          </form>
-        </div>
+    <div class="cards">
+
+      <div class="card">
+        <h3>ТЗ для 750₽</h3>
+        <p>Страница-результат + три шаблона. Чистая структура и минимум сложностей.</p>
+        <a href="750/tz_750.docx" class="btn" download>Скачать ТЗ (750)</a>
       </div>
 
+      <div class="card">
+        <h3>ТЗ для 1900₽</h3>
+        <p>Продвинутое оформление, motion-эффекты, акцент на эмоции и динамику.</p>
+        <a href="1900/tz_1900.docx" class="btn" download>Скачать ТЗ (1900)</a>
+      </div>
 
-        <div class="tape">«Живой» сайт, не скриншот</div>
+    </div>
+  </section>
 
-        <div class="stark-wrap">
-          <!-- сюда подставь свой PNG Stark-а с вырезанным фоном -->
-          <img
-            class="stark"
-            src="./image.png"
-            alt="Тони Старк смотрит на твой первый сайт"
-          />
-        </div>
+  <section class="block">
+    <h2>Что получает человек после покупки</h2>
+    <p class="desc">Каждый шаблон — это полный HTML и CSS, который ученик сможет отредактировать. Дизайн минималистичный, логика прозрачная.</p>
 
-        <div class="tag-pill">
-          <span class="tag-dot"></span>
-          <span>По этой ссылке уже можно открыть твой сайт</span>
-        </div>
-    </section>
-  </main>
+    <h3 class="sub">Шаблоны пакета 750₽</h3>
+    <ul class="files">
+      <li><a href="750/templates/template_1.html" target="_blank">template_1.html — личное резюме</a></li>
+      <li><a href="750/templates/template_2.html" target="_blank">template_2.html — результат за вечер</a></li>
+      <li><a href="750/templates/template_3.html" target="_blank">template_3.html — базовый лендинг</a></li>
+    </ul>
 
-  <script>
-    const headlines = [
-      "Твой первый сайт за один вечер.",
-      "Сделай страницу и покажи, что ты не ноль.",
-      "Сайт за вечер. Реальная ссылка, не скрин.",
-      "Один вечер — один сайт, который можно открыть.",
-      "Твой первый сайт. Без боли, без «я не умею»."
-    ];
+    <h3 class="sub">Шаблоны пакета 1900₽</h3>
+    <ul class="files">
+      <li><a href="1900/templates/template_1.html" target="_blank">template_1.html — storytelling-лендинг</a></li>
+      <li><a href="1900/templates/template_2.html" target="_blank">template_2.html — сайт с анимациями по скроллу</a></li>
+      <li><a href="1900/templates/template_3.html" target="_blank">template_3.html — сложный CSS + JS</a></li>
+    </ul>
+  </section>
 
-    function pickRandomHeadline() {
-      const i = Math.floor(Math.random() * headlines.length);
-      return headlines[i];
-    }
+  <section class="block">
+    <h2>Пример, как будут проходить обучение</h2>
+    <p class="desc">Полноценная страница с шагами — так ученик двигается от нуля к готовому сайту.</p>
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const h = document.getElementById("headline");
-      if (h) h.textContent = pickRandomHeadline();
+    <a href="./lesson.html" class="lesson-link">Открыть пример прохождения урока</a>
+  </section>
 
-      const form = document.getElementById("leadForm");
-      const input = document.getElementById("telegramHandle");
-      const err = document.getElementById("errorMsg");
+  <footer class="footer">
+    <p>© Первый сайт за вечер</p>
+  </footer>
 
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const v = (input.value || "").trim();
-
-        if (!v) {
-          err.textContent = "Введи @ник в Telegram.";
-          return;
-        }
-        if (!v.startsWith("@")) {
-          err.textContent = "Нужен формат @username.";
-          return;
-        }
-
-        err.textContent = "";
-        alert("Сохраняю Telegram: " + v + "\nДальше здесь твоя логика отправки на сервер.");
-      });
-    });
-  </script>
 </body>
 </html>

@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Свой первый сайт за вечер</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050509;
+      --bg-soft: #0c0c14;
+      --accent: #4f46e5;
+      --accent-soft: rgba(79, 70, 229, 0.12);
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-soft: #1f2933;
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --shadow-soft: 0 18px 45px rgba(0,0,0,0.6);
+      --max-width: 900px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #111827 0, #020617 45%, #02010a 100%);
+      color: var(--text-main);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      padding: 32px 12px 64px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: var(--max-width);
+    }
+
+    /* Хедер курса */
+
+    .course-header {
+      padding: 28px 24px 20px;
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,0.35), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(16,185,129,0.22), transparent 55%),
+        linear-gradient(145deg, rgba(15,23,42,0.9), rgba(2,6,23,0.95));
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148,163,184,0.18);
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .course-header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 0 0, rgba(255,255,255,0.08) 0, transparent 55%);
+      opacity: 0.9;
+      mix-blend-mode: soft-light;
+      pointer-events: none;
+    }
+
+    .course-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .course-label-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #22c55e 0, #16a34a 45%, #052e16 100%);
+      box-shadow: 0 0 16px rgba(34,197,94,0.9);
+    }
+
+    .course-title {
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin: 0 0 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .course-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .course-meta {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .course-meta-pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.32);
+      background: rgba(15,23,42,0.65);
+      backdrop-filter: blur(12px);
+    }
+
+    /* Шаги */
+
+    .steps-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      margin-bottom: 40px;
+    }
+
+    .step {
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, #020617, #030712);
+      border: 1px solid var(--border-soft);
+      padding: 22px 20px 20px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-header {
+      display: flex;
+      gap: 14px;
+      align-items: baseline;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .step-number {
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: -0.06em;
+      line-height: 1;
+      color: var(--accent);
+      text-shadow: 0 0 15px rgba(79,70,229,0.7);
+      flex-shrink: 0;
+    }
+
+    .step-title-wrap {
+      flex: 1 1 0;
+      min-width: 220px;
+    }
+
+    .step-name {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .step-description {
+      margin: 8px 0 0;
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    .step-body {
+      display: grid;
+      grid-template-columns: 1.7fr 1.1fr;
+      gap: 16px;
+      margin-top: 12px;
+      align-items: flex-start;
+    }
+
+    .step-text {
+      font-size: 16px;
+    }
+
+    .step-text p {
+      margin: 0 0 8px;
+    }
+
+    .step-links {
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .step-link {
+      font-size: 13px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.35);
+      background: rgba(15,23,42,0.7);
+      color: #e5e7eb;
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 260px;
+    }
+
+    .step-link:hover {
+      border-color: rgba(129,140,248,0.9);
+    }
+
+    .step-media {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-end;
+    }
+
+    .step-image-wrapper {
+      width: 100%;
+      max-width: 260px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.25);
+      background: #020617;
+      cursor: zoom-in;
+      position: relative;
+    }
+
+    .step-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.22s ease-out;
+    }
+
+    .step-image-wrapper:hover .step-image {
+      transform: scale(1.03);
+    }
+
+    .step-image-hint {
+      position: absolute;
+      bottom: 6px;
+      right: 8px;
+      font-size: 11px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.8);
+      border: 1px solid rgba(148,163,184,0.4);
+      color: var(--text-muted);
+      backdrop-filter: blur(8px);
+    }
+
+    /* Форма результата */
+
+    .result-card {
+      border-radius: var(--radius-xl);
+      padding: 22px 20px 20px;
+      background:
+        radial-gradient(circle at top right, rgba(79,70,229,0.22), transparent 58%),
+        linear-gradient(140deg, #020617, #020617 30%, #030712 100%);
+      border: 1px solid rgba(148,163,184,0.3);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .result-title {
+      margin: 0 0 8px;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .result-subtitle {
+      margin: 0 0 18px;
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 460px;
+    }
+
+    .result-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .result-input {
+      flex: 1 1 220px;
+      min-width: 0;
+      padding: 11px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(55,65,81,0.9);
+      background: rgba(15,23,42,0.95);
+      color: var(--text-main);
+      font-size: 14px;
+      outline: none;
+    }
+
+    .result-input::placeholder {
+      color: #6b7280;
+    }
+
+    .result-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(79,70,229,0.4);
+    }
+
+    .result-button {
+      padding: 11px 18px;
+      border-radius: 999px;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      color: white;
+      box-shadow: 0 12px 30px rgba(79,70,229,0.6);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .result-button:active {
+      transform: translateY(1px);
+      box-shadow: 0 6px 18px rgba(79,70,229,0.7);
+    }
+
+    .result-hint {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Модалка для увеличения картинки */
+
+    .image-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(3,7,18,0.86);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      padding: 16px;
+    }
+
+    .image-modal.open {
+      display: flex;
+    }
+
+    .image-modal-inner {
+      position: relative;
+      max-width: min(96vw, 1100px);
+      max-height: 88vh;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #020617;
+      border: 1px solid rgba(148,163,184,0.4);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.95);
+    }
+
+    .image-modal-img {
+      display: block;
+      max-width: 100%;
+      max-height: 88vh;
+      object-fit: contain;
+    }
+
+    .image-modal-close {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      font-size: 20px;
+      border: none;
+      background: rgba(15,23,42,0.85);
+      color: #e5e7eb;
+      border-radius: 999px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+    }
+
+    .image-modal-close:hover {
+      background: rgba(15,23,42,0.98);
+    }
+
+    /* Адаптив */
+
+    @media (max-width: 800px) {
+      body {
+        padding: 18px 10px 40px;
+      }
+
+      .course-header {
+        padding: 20px 18px 16px;
+      }
+
+      .steps-wrapper {
+        gap: 20px;
+      }
+
+      .step {
+        padding: 18px 16px 16px;
+      }
+
+      .step-header {
+        margin-bottom: 10px;
+      }
+
+      .step-number {
+        font-size: 32px;
+      }
+
+      .step-name {
+        font-size: 18px;
+      }
+
+      .step-body {
+        grid-template-columns: 1fr;
+      }
+
+      .step-media {
+        align-items: flex-start;
+      }
+
+      .step-image-wrapper {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .course-title {
+        font-size: 24px;
+      }
+
+      .step-number {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Хедер курса заполнится из JSON -->
+    <header class="course-header" id="course-header">
+      <!-- JS заменит на реальные данные -->
+    </header>
+
+    <!-- Шаги -->
+    <main class="steps-wrapper" id="steps-container">
+      <!-- шаги рендерит JS -->
+    </main>
+
+    <!-- Блок отправки результата -->
+    <section class="result-card">
+      <h2 class="result-title">Скинь свой результат</h2>
+      <p class="result-subtitle">
+        Оставь ссылку на свой сайт — при желании я смогу добавить лучшие работы в подборку итогов.
+      </p>
+
+      <form class="result-form" onsubmit="event.preventDefault(); handleResultSubmit();">
+        <input
+          id="result-url"
+          type="url"
+          class="result-input"
+          placeholder="https://мой-первый-сайт.github.io"
+          required
+        />
+        <button type="submit" class="result-button">Опубликовать</button>
+      </form>
+      <p class="result-hint" id="result-hint">Сохрани ссылку у себя — она пригодится и дальше.</p>
+    </section>
+  </div>
+
+  <!-- Модалка увеличения изображения -->
+  <div class="image-modal" id="image-modal">
+    <div class="image-modal-inner">
+      <button class="image-modal-close" type="button" aria-label="Закрыть" onclick="closeImageModal()">×</button>
+      <img src="" alt="Шаг — крупный пример" class="image-modal-img" id="image-modal-img" />
+    </div>
+  </div>
+
+  <script>
+    // Пример твоего JSON (заменишь под свои данные или будешь подставлять из бэка)
+    const courseData = {
+      id: 1,
+      name: "Свой первый сайт за вечер",
+      description: "Сделаем это всего за 5 шагов!",
+    steps: [
+  {
+    id: 1,
+    step: 1,
+    name: "Регистрация в GitHub",
+    image: "./image.png",
+    urls: ["https://github.com"],
+    description: "Создай аккаунт в GitHub. Это место, где будет храниться твой будущий сайт."
+  },
+  {
+    id: 2,
+    step: 2,
+    name: "Создание репозитория",
+    image: "./image.png",
+    urls: [],
+    description: "Создай новый репозиторий. Название — любое. Здесь будет лежать HTML-файл сайта."
+  },
+  {
+    id: 3,
+    step: 3,
+    name: "Создание файла index.html",
+    image: null,
+    urls: [],
+    description: "Добавь файл index.html — это главный файл любого сайта. Начнём с простого шаблона."
+  },
+  {
+    id: 4,
+    step: 4,
+    name: "Добавление первого текста",
+    image: null,
+    urls: [],
+    description: "Внутрь index.html добавь заголовок и абзац. Это и есть первый контент твоего сайта."
+  },
+  {
+    id: 5,
+    step: 5,
+    name: "Подключение стилей",
+    image: "./image.png",
+    urls: [],
+    description: "Создай файл style.css и подключи его внутри index.html. Добавим цвета и отступы."
+  },
+  {
+    id: 6,
+    step: 6,
+    name: "Добавление картинки",
+    image: "./image.png",
+    urls: [],
+    description: "Загрузи изображение в репозиторий и вставь его на страницу с помощью тега <img>."
+  },
+  {
+    id: 7,
+    step: 7,
+    name: "Проверка отображения",
+    image: null,
+    urls: [],
+    description: "Открой сайт локально через встроенный предпросмотр GitHub. Убедись, что всё отображается корректно."
+  },
+  {
+    id: 8,
+    step: 8,
+    name: "Включение GitHub Pages",
+    image: "./image.png",
+    urls: ["https://docs.github.com/en/pages"],
+    description: "Зайди в настройки репозитория, найди раздел Pages и включи публикацию сайта."
+  },
+  {
+    id: 9,
+    step: 9,
+    name: "Выбор ветки публикации",
+    image: null,
+    urls: [],
+    description: "GitHub попросит выбрать ветку, из которой будет опубликован сайт. Обычно это main или master."
+  },
+  {
+    id: 10,
+    step: 10,
+    name: "Получение ссылки сайта",
+    image: "./image.png",
+    urls: [],
+    description: "После включения Pages GitHub выдаст ссылку. Это и есть твой первый опубликованный сайт."
+  },
+  {
+    id: 11,
+    step: 11,
+    name: "Финальная проверка",
+    image: null,
+    urls: [],
+    description: "Перейди по ссылке, проверь работу сайта на телефоне и компьютере. Поправь, если нужно."
+  },
+  {
+    id: 12,
+    step: 12,
+    name: "Отправка результата",
+    image: null,
+    urls: [],
+    description: "Скопируй ссылку на свой сайт и вставь её в форму внизу страницы. Ты завершил проект."
+  }
+]
+
+    };
+
+    // Рендер хедера
+    function renderHeader(data) {
+      const header = document.getElementById("course-header");
+      header.innerHTML = `
+        <div class="course-label">
+          <span class="course-label-dot"></span>
+          <span>Мини-курс по шагам</span>
+        </div>
+        <h1 class="course-title">${escapeHtml(data.name || "")}</h1>
+        <p class="course-subtitle">${escapeHtml(data.description || "")}</p>
+        <div class="course-meta">
+          <span class="course-meta-pill">${data.steps?.length || 0} шагов</span>
+          <span class="course-meta-pill">Уровень: новичок</span>
+        </div>
+      `;
+    }
+
+    // Рендер шагов
+    function renderSteps(steps) {
+      const container = document.getElementById("steps-container");
+      container.innerHTML = "";
+
+      (steps || []).forEach((step) => {
+        const stepEl = document.createElement("section");
+        stepEl.className = "step";
+
+        const hasImage = !!step.image;
+
+        stepEl.innerHTML = `
+          <div class="step-header">
+            <div class="step-number">${step.step ?? ""}</div>
+            <div class="step-title-wrap">
+              <h2 class="step-name">${escapeHtml(step.name || "")}</h2>
+              ${
+                step.shortDescription
+                  ? `<p class="step-description">${escapeHtml(step.shortDescription)}</p>`
+                  : ""
+              }
+            </div>
+          </div>
+          <div class="step-body">
+            <div class="step-text">
+              <p>${escapeHtml(step.description || "")}</p>
+              ${
+                step.urls && step.urls.length
+                  ? `<div class="step-links">
+                      ${step.urls
+                        .map(
+                          (u) =>
+                            `<a class="step-link" href="${encodeURI(u)}" target="_blank" rel="noreferrer noopener">${escapeHtml(
+                              u
+                            )}</a>`
+                        )
+                        .join("")}
+                    </div>`
+                  : ""
+              }
+            </div>
+            ${
+              hasImage
+                ? `
+              <div class="step-media">
+                <div class="step-image-wrapper" data-image="${encodeURI(step.image)}">
+                  <img
+                    src="${encodeURI(step.image)}"
+                    alt="Иллюстрация к шагу ${step.step}"
+                    class="step-image"
+                  />
+                  <div class="step-image-hint">Нажми, чтобы увеличить</div>
+                </div>
+              </div>
+            `
+                : `<div class="step-media"></div>`
+            }
+          </div>
+        `;
+
+        container.appendChild(stepEl);
+      });
+
+      // навесим обработчики для увеличения картинок
+      attachImageHandlers();
+    }
+
+    // Увеличение картинки
+    function attachImageHandlers() {
+      const wrappers = document.querySelectorAll(".step-image-wrapper");
+      wrappers.forEach((wrapper) => {
+        wrapper.onclick = () => {
+          const src = wrapper.getAttribute("data-image") || wrapper.querySelector("img")?.src;
+          if (!src) return;
+          openImageModal(src);
+        };
+      });
+    }
+
+    const imageModal = document.getElementById("image-modal");
+    const imageModalImg = document.getElementById("image-modal-img");
+
+    function openImageModal(src) {
+      imageModalImg.src = src;
+      imageModal.classList.add("open");
+    }
+
+    function closeImageModal() {
+      imageModal.classList.remove("open");
+      imageModalImg.src = "";
+    }
+
+    imageModal.addEventListener("click", (e) => {
+      if (e.target === imageModal) {
+        closeImageModal();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && imageModal.classList.contains("open")) {
+        closeImageModal();
+      }
+    });
+
+    // Отправка результата (без бэка, просто заглушка)
+    function handleResultSubmit() {
+      const input = document.getElementById("result-url");
+      const hint = document.getElementById("result-hint");
+      const value = input.value.trim();
+
+      if (!value) return;
+
+      // здесь вместо alert можешь повесить fetch на свой сервер
+      console.log("Ссылка результата:", value);
+
+      hint.textContent = "Ссылка сохранена в этом браузере. Если решу публиковать работы — смогу запросить её у тебя.";
+      input.value = "";
+    }
+
+    // Экранирование
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    // Инициализация
+    renderHeader(courseData);
+    renderSteps(courseData.steps);
+  </script>
+</body>
+</html>

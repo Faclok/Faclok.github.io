@@ -1,0 +1,299 @@
+/* ===== БАЗОВЫЕ НАСТРОЙКИ СТРАНИЦЫ ===== */
+
+:root {
+  /* Здесь ученик может поменять цвета под себя */
+  --bg-page: #050712;
+  --bg-card: #101424;
+  --bg-card-soft: #111626;
+  --accent: #ffcf4a;
+  --accent-soft: rgba(255, 207, 74, 0.18);
+  --text-main: #f7f7ff;
+  --text-muted: #a0a3c2;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #181d3b 0, #050712 55%);
+  color: var(--text-main);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* ===== КОНТЕЙНЕР СТРАНИЦЫ ===== */
+
+.page {
+  min-height: 100vh;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 16px 32px;
+}
+
+/* ===== ШАПКА / РЕЗЮМЕ ВВЕРХУ ===== */
+
+.header {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 24px;
+  padding: 20px 20px;
+  background: linear-gradient(135deg, #12172b, #221a0c);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 24px;
+}
+
+.header__photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__photo img {
+  display: block;
+  width: 180px;
+  height: 180px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.header__info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__name {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 32px);
+  line-height: 1.1;
+}
+
+.header__role {
+  margin: 0;
+  font-size: 16px;
+  color: var(--accent);
+}
+
+.header__summary {
+  margin: 4px 0 0;
+  color: var(--text-main);
+}
+
+.header__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.header__meta span {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--text-muted);
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+
+.main {
+  margin-top: 16px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 20px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===== КАРТОЧКИ ===== */
+
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  padding: 16px 16px 18px;
+}
+
+.card__title {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+/* ===== ТЕКСТ / СЛУЖЕБНОЕ ===== */
+
+.text-muted {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ===== СПИСКИ ===== */
+
+.list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-main);
+  font-size: 15px;
+}
+
+.list li + li {
+  margin-top: 4px;
+}
+
+/* ===== ТЕГИ / ИНСТРУМЕНТЫ ===== */
+
+.tag-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+}
+
+/* ===== ЭЛЕМЕНТЫ ОПЫТА / ПРОЕКТА ===== */
+
+.item {
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.item:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.item__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.item__title {
+  margin: 0;
+  font-size: 16px;
+}
+
+.item__link {
+  font-size: 13px;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+  color: var(--accent);
+}
+
+.item__meta {
+  margin: 4px 0 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.item__text {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+
+.item__list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.item__list li + li {
+  margin-top: 3px;
+}
+
+.item--compact {
+  padding: 8px 0;
+}
+
+/* ===== КОНТАКТЫ ===== */
+
+.contact-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+.contact-list li + li {
+  margin-top: 4px;
+}
+
+.contact-list__label {
+  display: inline-block;
+  min-width: 80px;
+  color: var(--text-muted);
+}
+
+.contact-list a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* ===== ФУТЕР ===== */
+
+.footer {
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ===== АДАПТИВ ДЛЯ ТЕЛЕФОНА ===== */
+
+@media (max-width: 768px) {
+  .header {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .header__photo img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

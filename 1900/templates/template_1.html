@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Моё резюме</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Подключаем файл со стилями -->
+  <link rel="stylesheet" href="template_1.css" />
+</head>
+<body>
+  <!-- Вся страница внутри контейнера -->
+  <div class="page">
+
+    <!-- ШАПКА С ИМЕНЕМ -->
+    <header class="header">
+      <!-- Сюда можно поставить свою фотографию или аватар -->
+      <div class="header__photo">
+        <!-- Заменить src на свою картинку или удалить тег img -->
+        <img src="./image.png"
+             alt="Моё фото" />
+      </div>
+
+      <div class="header__info">
+        <!-- ИМЯ И ФАМИЛИЯ -->
+        <h1 class="header__name">Иван Иванов</h1>
+
+        <!-- КОРОТКИЙ ТИТУЛ / КТО ТЫ -->
+        <p class="header__role">
+          Начинающий веб-разработчик
+        </p>
+
+        <!-- КОРОТКО О СЕБЕ ОДНИМ АБЗАЦЕМ -->
+        <p class="header__summary">
+          Делаю простые и понятные сайты за вечер. Учусь шаг за шагом,
+          собираю первые проекты в портфолио и довожу задачи до результата.
+        </p>
+
+        <!-- БЫСТРЫЕ ФАКТЫ -->
+        <div class="header__meta">
+          <span>Город: Ухта</span>
+          <span>Формат: онлайн / офлайн</span>
+          <span>Готовность: отвечаю в течение дня</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- КОЛОНКИ: СЛЕВА БЛОКИ, СПРАВА ДЕТАЛИ -->
+      <div class="layout">
+        <!-- ЛЕВАЯ КОЛОНКА -->
+        <section class="column column--left">
+
+          <!-- БЛОК "ОБО МНЕ" -->
+          <section class="card">
+            <h2 class="card__title">Обо мне</h2>
+            <p>
+              Здесь коротко опиши, чем ты занимаешься и что для тебя важно в работе.
+              Например:
+            </p>
+            <p class="text-muted">
+              «Люблю понятные задачи и честную коммуникацию. Не бросаю проекты
+              на середине и всегда довожу до рабочего результата.»
+            </p>
+          </section>
+
+          <!-- НАВЫКИ -->
+          <section class="card">
+            <h2 class="card__title">Навыки</h2>
+
+            <!-- Сюда студент подставляет свои навыки -->
+            <ul class="list">
+              <li>HTML и базовый CSS</li>
+              <li>Создание простых одностраничных сайтов</li>
+              <li>Работа с GitHub Pages / Netlify</li>
+              <li>Коммуникация с заказчиком в Telegram</li>
+            </ul>
+          </section>
+
+          <!-- ИНСТРУМЕНТЫ -->
+          <section class="card">
+            <h2 class="card__title">Инструменты</h2>
+            <ul class="tag-list">
+              <li class="tag">VS Code</li>
+              <li class="tag">GitHub</li>
+              <li class="tag">Figma (просмотр макетов)</li>
+              <li class="tag">Chrome DevTools</li>
+            </ul>
+          </section>
+
+          <!-- ЯЗЫКИ -->
+          <section class="card">
+            <h2 class="card__title">Языки</h2>
+            <ul class="list">
+              <li>Русский — родной</li>
+              <li>Английский — читаю документацию</li>
+            </ul>
+          </section>
+
+        </section>
+
+        <!-- ПРАВАЯ КОЛОНКА -->
+        <section class="column column--right">
+
+          <!-- ОПЫТ / ПРОЕКТЫ -->
+          <section class="card">
+            <h2 class="card__title">Проекты</h2>
+
+            <!-- ПРОЕКТ 1 -->
+            <article class="item">
+              <div class="item__header">
+                <h3 class="item__title">Личный сайт-визитка</h3>
+                <!-- Сюда можно поставить ссылку на сайт -->
+                <a class="item__link" href="#" target="_blank">
+                  Открыть сайт
+                </a>
+              </div>
+              <p class="item__meta">
+                2025 · HTML, CSS · GitHub Pages
+              </p>
+              <p class="item__text">
+                Одностраничный сайт обо мне с контактами и ссылкой на Telegram.
+                Сделан за один вечер по простой инструкции.
+              </p>
+              <ul class="item__list">
+                <li>С нуля сверстал адаптивную страницу.</li>
+                <li>Настроил публикацию через GitHub Pages.</li>
+                <li>Собрал первые отклики от знакомых и заказчиков.</li>
+              </ul>
+            </article>
+
+            <!-- ПРОЕКТ 2 -->
+            <article class="item">
+              <div class="item__header">
+                <h3 class="item__title">Простой лендинг услуги</h3>
+                <a class="item__link" href="#" target="_blank">
+                  Открыть сайт
+                </a>
+              </div>
+              <p class="item__meta">
+                2025 · HTML, CSS · Netlify
+              </p>
+              <p class="item__text">
+                Небольшой лендинг под одну услугу: описал проблему, решение,
+                шаги работы и цену.
+              </p>
+              <ul class="item__list">
+                <li>Разобрался со структурой продающей страницы.</li>
+                <li>Собрал первый “боевой” лендинг для портфолио.</li>
+              </ul>
+            </article>
+          </section>
+
+          <!-- ОБУЧЕНИЕ -->
+          <section class="card">
+            <h2 class="card__title">Обучение</h2>
+
+            <article class="item item--compact">
+              <h3 class="item__title">Курс “Первый сайт за вечер”</h3>
+              <p class="item__meta">
+                2025 · Практический формат
+              </p>
+              <p class="item__text">
+                За один вечер собрал свой первый сайт, разобрался в базовом
+                HTML и CSS, научился выкладывать результат в интернет.
+              </p>
+            </article>
+
+            <!-- Здесь ученик может добавить свои курсы / техникум / вуз -->
+            <article class="item item--compact">
+              <h3 class="item__title">Дополнительное обучение</h3>
+              <p class="item__meta">
+                Здесь можно вписать: техникум, вуз, онлайн-курсы
+              </p>
+            </article>
+          </section>
+
+          <!-- КОНТАКТЫ -->
+          <section class="card">
+            <h2 class="card__title">Как связаться</h2>
+            <p class="text-muted">
+              Выбери тот способ связи, которым реально пользуешься.
+            </p>
+
+            <ul class="contact-list">
+              <!-- Вместо # подставить свои ссылки -->
+              <li>
+                <span class="contact-list__label">Telegram:</span>
+                <a href="#" target="_blank">@мой_nick</a>
+              </li>
+              <li>
+                <span class="contact-list__label">Email:</span>
+                <a href="mailto:example@mail.ru">example@mail.ru</a>
+              </li>
+              <li>
+                <span class="contact-list__label">Портфолио:</span>
+                <a href="#" target="_blank">github.com/мой-профиль</a>
+              </li>
+            </ul>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Шаблон резюме сделан по инструкции “первый сайт за вечер”. Все тексты
+        и ссылки легко заменить под себя.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
