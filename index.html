@@ -9,56 +9,139 @@
 <body>
 
   <header class="hero">
-    <h1>Материалы для разработки и обучения</h1>
-    <p>Здесь собраны ТЗ для дизайнеров и шаблоны сайтов, которые получают ученики после оплаты.</p>
+    <div class="hero-inner">
+      <p class="hero-kicker">для дизайнеров и разработчиков</p>
+      <h1>Материалы для разработки и обучения</h1>
+      <p class="hero-lead">
+        Здесь собраны ТЗ для дизайнеров и шаблоны сайтов, которые получают ученики после оплаты.
+      </p>
+    </div>
   </header>
 
-  <section class="block">
-    <h2>Технические задания</h2>
-    <p class="desc">Два уровня сложности: 750₽ — базовый лендинг. 1900₽ — расширенный продукт с анимациями и сложными сценариями.</p>
+  <main class="main">
 
-    <div class="cards">
+    <section class="block">
+      <header class="block-header">
+        <h2>Технические задания</h2>
+        <p class="desc">
+          Два уровня сложности: <strong>750₽</strong> — базовый лендинг. <strong>1900₽</strong> — расширенный продукт с анимациями и сложными сценариями.
+        </p>
+      </header>
 
-      <div class="card">
-        <h3>ТЗ для 750₽</h3>
-        <p>Страница-результат + три шаблона. Чистая структура и минимум сложностей.</p>
-        <a href="750/tz_750.docx" class="btn" download>Скачать ТЗ (750)</a>
+      <div class="cards">
+
+        <article class="card">
+          <h3>ТЗ для 750₽</h3>
+          <p>
+            Страница-результат + три шаблона. Чистая структура, минимум сложностей — можно сверстать за один вечер.
+          </p>
+
+          <div class="card-meta">
+            <span class="meta-pill">уровень: базовый</span>
+            <span class="meta-pill">1 страница + 3 шаблона</span>
+          </div>
+
+          <div class="card-actions">
+            <a href="750/tz_750.docx" class="btn" download>Скачать ТЗ (750)</a>
+            <!-- Макет уже существует по пути /750/index.html -->
+            <a href="750/index.html" class="link-secondary" target="_blank" rel="noopener">
+              Открыть макет страницы
+            </a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>ТЗ для 1900₽</h3>
+          <p>
+            Продвинутое оформление, motion-эффекты, акцент на эмоции и динамику. Подходит под более «дорогой» опыт.
+          </p>
+
+          <div class="card-meta">
+            <span class="meta-pill meta-pill--dark">уровень: продвинутый</span>
+            <span class="meta-pill meta-pill--dark">сложные сценарии</span>
+          </div>
+
+          <div class="card-actions">
+            <a href="1900/tz_1900.docx" class="btn btn-outline" download>Скачать ТЗ (1900)</a>
+          </div>
+        </article>
+
       </div>
+    </section>
 
-      <div class="card">
-        <h3>ТЗ для 1900₽</h3>
-        <p>Продвинутое оформление, motion-эффекты, акцент на эмоции и динамику.</p>
-        <a href="1900/tz_1900.docx" class="btn" download>Скачать ТЗ (1900)</a>
+    <section class="block">
+      <header class="block-header">
+        <h2>Что получает человек после покупки</h2>
+        <p class="desc">
+          Каждый шаблон — это полный HTML и CSS, который ученик сможет отредактировать. Дизайн минималистичный, логика прозрачная.
+        </p>
+      </header>
+
+      <div class="templates-grid">
+        <div class="templates-column">
+          <h3 class="sub">Шаблоны пакета 750₽</h3>
+          <ul class="files">
+            <li>
+              <a href="750/templates/template_1.html" target="_blank">
+                template_1.html — личное резюме
+              </a>
+              <span class="file-note">Стартовый сайт-квиз о человеке</span>
+            </li>
+            <li>
+              <a href="750/templates/template_2.html" target="_blank">
+                template_2.html — результат за вечер
+              </a>
+              <span class="file-note">Фокус на демонстрацию результата</span>
+            </li>
+            <li>
+              <a href="750/templates/template_3.html" target="_blank">
+                template_3.html — базовый лендинг
+              </a>
+              <span class="file-note">Чистая структура блоков</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="templates-column">
+          <h3 class="sub">Шаблоны пакета 1900₽</h3>
+          <ul class="files">
+            <li>
+              <a href="1900/templates/template_1.html" target="_blank">
+                template_1.html — storytelling-лендинг
+              </a>
+              <span class="file-note">История, которая ведёт к офферу</span>
+            </li>
+            <li>
+              <a href="1900/templates/template_2.html" target="_blank">
+                template_2.html — сайт с анимациями по скроллу
+              </a>
+              <span class="file-note">Поэтапные сцены и переходы</span>
+            </li>
+            <li>
+              <a href="1900/templates/template_3.html" target="_blank">
+                template_3.html — сложный CSS + JS
+              </a>
+              <span class="file-note">Максимум возможностей для «поиграться»</span>
+            </li>
+          </ul>
+        </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section class="block">
+      <header class="block-header">
+        <h2>Пример, как будут проходить обучение</h2>
+        <p class="desc">
+          Полноценная страница с шагами — так ученик двигается от нуля к готовому сайту.
+        </p>
+      </header>
 
-  <section class="block">
-    <h2>Что получает человек после покупки</h2>
-    <p class="desc">Каждый шаблон — это полный HTML и CSS, который ученик сможет отредактировать. Дизайн минималистичный, логика прозрачная.</p>
+      <a href="./lesson.html" class="lesson-link" target="_blank" rel="noopener">
+        Открыть пример прохождения урока
+      </a>
+    </section>
 
-    <h3 class="sub">Шаблоны пакета 750₽</h3>
-    <ul class="files">
-      <li><a href="750/templates/template_1.html" target="_blank">template_1.html — личное резюме</a></li>
-      <li><a href="750/templates/template_2.html" target="_blank">template_2.html — результат за вечер</a></li>
-      <li><a href="750/templates/template_3.html" target="_blank">template_3.html — базовый лендинг</a></li>
-    </ul>
-
-    <h3 class="sub">Шаблоны пакета 1900₽</h3>
-    <ul class="files">
-      <li><a href="1900/templates/template_1.html" target="_blank">template_1.html — storytelling-лендинг</a></li>
-      <li><a href="1900/templates/template_2.html" target="_blank">template_2.html — сайт с анимациями по скроллу</a></li>
-      <li><a href="1900/templates/template_3.html" target="_blank">template_3.html — сложный CSS + JS</a></li>
-    </ul>
-  </section>
-
-  <section class="block">
-    <h2>Пример, как будут проходить обучение</h2>
-    <p class="desc">Полноценная страница с шагами — так ученик двигается от нуля к готовому сайту.</p>
-
-    <a href="./lesson.html" class="lesson-link">Открыть пример прохождения урока</a>
-  </section>
+  </main>
 
   <footer class="footer">
     <p>© Первый сайт за вечер</p>
