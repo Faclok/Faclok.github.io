@@ -279,7 +279,7 @@
           </p>
         </div>
         <div class="price-cta">
-          <button class="btn-primary">
+          <button class="btn-primary" id="paymentContainer">
             Взять и сделать сегодня
           </button>
           <p class="price-note">
@@ -327,6 +327,47 @@
       </footer>
     </div>
   </div>
+  <script>    
+  const initConfig = {
+    terminalKey: '1759021134395DEMO', // Значение terminalKey из личного кабинета
+    product: 'eacq',
+    features: {
+      iframe: {
+        /**
+         * Если используется параметр container, скрипт встроит iframe в этот элемент
+         * На странице должен существовать элемент с id="paymentContainer"
+         */
+        container: document.getElementById('paymentContainer'),         
+        /**
+         * Функция paymentStartCallback должна возвращать Promise, который резолвит ссылку платежной формы — PaymentURL
+         *
+         * В этой функции должен вызываться ваш бэкенд-сервис — в него передается внутренний orderId
+         * Бэкенд-сервис находит необходимые для запроса метода «Инициировать платеж» поля (например, сумма) внутри вашей системы и отправляет запрос 
+         * PaymentURL из ответа должен быть возвращен во frontend в paymentStartCallback
+         *
+         * Пример:
+         * const res = await new PaymentIntegration.Helpers().request(URL, 'POST', INIT_PARAMS);
+         * return res.PaymentURL;
+         *
+         * Переменная PaymentIntegration содержит класс-помощник Helpers c методом request для отправки запросов на бэкенд
+         * В примере URL — это URL вашего бэкенд-сервиса, который вызовет метод «Инициировать платеж» и вернет PaymentURL
+         *
+         * @param {OverlayType} paymentType — способ оплаты, выбранный пользователем
+         * @returns {Promise<string>}
+         */
+        paymentStartCallback: async () => {
+          const res = await new PaymentIntegration.Helpers().request(URL, 'POST', INIT_PARAMS);
+          return res.PaymentURL;
+        },
+      },
+    },
+  };
+  
+  function onPaymentIntegrationLoad() {
+    PaymentIntegration.init(initConfig).then().catch();
+  }
+</script>
+  <script src="https://integrationjs.tbank.ru/integration.js" onload="onPaymentIntegrationLoad()" async></script>
 </body>
 
 </html>
