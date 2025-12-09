@@ -747,3 +747,33 @@ button {
     border-radius: 16px;
   }
 }
+
+/* ====== SB: СТАВКИ / ТРАНСФОРМАЦИЯ ====== */
+
+.result-card__pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.result-card__meta {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* центрируем финальный CTA при желании */
+#cta-final .section-title {
+  text-align: left;
+}
+
+#cta-final .hero-actions {
+  margin-top: 12px;
+}

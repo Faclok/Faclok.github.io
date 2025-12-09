@@ -1,295 +1,302 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
   <title>Твой первый сайт за вечер — доступ за 1900₽</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="./style.css" />
 </head>
+
 <body>
   <div class="page">
     <div class="wrapper">
 
-      <!-- HERO: герой и обещание -->
+      <!-- 1. ГЛАВНЫЙ ЭКРАН / ГЕРОЙ -->
       <header class="hero" id="top">
         <div class="hero-main">
           <div class="tagline">
             <div class="tagline-dot"></div>
-            Сильный старт в IT за один вечер
+            Первый сайт с поддержкой за один вечер
           </div>
 
-          <div class="hero-eyebrow">для тех, кто боится начать, но хочет реальный результат</div>
+          <p class="hero-eyebrow">
+            для тех, кто боится IT, но хочет понятный результат
+          </p>
 
           <h1 class="hero-title">
-            Свой первый сайт за вечер.<br />
-            <span>С поддержкой, которая не даёт свернуть с маршрута.</span>
+            Твой первый сайт за вечер.
           </h1>
 
           <p class="hero-subtitle">
-            Ты не разбираешься в терминах и не «учишься профессии».
-            Ты проходишь понятный маршрут: смотришь видео, повторяешь шаги, публикуешь сайт
-            и убираешь чувство, что IT — «не твоё».
+            Ты хочешь сделать свой первый сайт, но не знаешь, с чего начать.
+            Этот вечер с видео и разбором ошибок может стать точкой входа.
           </p>
 
           <div class="hero-actions">
-            <a href="#price" class="btn-primary">Получить доступ за 1900₽</a>
-            <button class="btn-ghost" type="button" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">
-              <span>Посмотреть, как устроен вечер</span>
+            <button class="btn-primary" id="primaryHeroCta">
+              Начать сейчас
+            </button>
+            <button class="btn-ghost" id="secondaryHeroCta">
+              <span>Посмотреть пример</span>
             </button>
           </div>
 
           <p class="hero-note">
             Формат: готовый HTML-шаблон, видео «повтори за мной», разбор типичных ошибок
-            и пошаговая публикация на GitHub Pages. Без чатов, марафонов и обязательств.
+            и пошаговая публикация на GitHub Pages.
           </p>
         </div>
 
+        <!-- визуал: пример готового сайта -->
         <div class="hero-visual">
           <div class="hero-card">
             <div class="hero-card-header">
-              <span>Вечер, после которого ты перестаёшь бояться кода</span>
-              <span class="hero-card-pill">поддержка и результат</span>
+              <div class="hero-card-pill">пример результата</div>
+              <div>first-site.example</div>
             </div>
 
-<pre class="hero-card-code"><code><span class="code-tag">&lt;evening</span> <span class="code-attr">status</span>=<span class="code-str">"я боюсь всё сломать"</span><span class="code-tag">&gt;</span>
-  открыть видео
-  повторить шаги
-  спокойно пройти публикацию
-<span class="code-tag">&lt;/evening&gt;</span>
-
-<span class="code-tag">&lt;result</span> <span class="code-attr">link</span>=<span class="code-str">"https://твой-ник.github.io/первый-сайт"</span><span class="code-tag">/&gt;</span></code></pre>
-
-            <div class="hero-meme">
-              <img src="./img/before_after.png" alt="Мем о первом сайте" />
+            <div class="mockup-screenshot">
+              <!-- сюда — скрин демо сайта -->
+              <img src="./img/result.png" alt="Пример готового сайта">
             </div>
           </div>
         </div>
       </header>
 
-      <!-- ПРОБЛЕМА: страх + застревание -->
+      <!-- 2. ПРОБЛЕМА ГЕРОЯ -->
       <section class="section" id="problem">
         <div class="section-header">
-          <div class="section-kicker">Почему сайт так и не появился</div>
-          <h2 class="section-title">
-            Проблема не в тебе. <span>Проблема в формате, в котором тебе предлагали войти в IT.</span>
-          </h2>
-          <p class="section-subtitle">
-            Бесплатные уроки и курсы требуют «сразу понять всё». В итоге ты несколько раз начинал,
-            ничего не публиковал и только усиливал ощущение, что это не твоё поле.
-          </p>
+          <div class="section-kicker">С чем приходит герой</div>
+          <h2 class="section-title">Три уровня одной задачи</h2>
         </div>
 
         <div class="problem-grid">
           <article class="problem-card">
             <div class="problem-label">Внешняя проблема</div>
             <p class="problem-text">
-              Открываешь урок по HTML — час новой информации, сложный код и ощущение,
-              что ты отстаёшь уже на первом шаге.
+              Ты не умеешь делать сайты и откладываешь первый шаг.
             </p>
           </article>
 
           <article class="problem-card">
             <div class="problem-label">Внутренняя проблема</div>
             <p class="problem-text">
-              Есть страх нажать не туда, что-то сломать и окончательно убедиться,
-              что «техническое» — это не про тебя. Проще вообще не начинать.
+              Ты боишься IT, боишься сломать что-то в коде и уверен, что «не получится».
             </p>
           </article>
 
           <article class="problem-card">
-            <div class="problem-label">Глубокая проблема</div>
+            <div class="problem-label">Философская проблема</div>
             <p class="problem-text">
-              Ты застреваешь в роли наблюдателя: смотришь на чужие проекты, пока у тебя
-              до сих пор нет ни одного сайта, созданного своими руками.
+              Каждый имеет право создать что-то своё и видеть результат своей работы в браузере.
             </p>
           </article>
         </div>
+      </section>
 
-        <div class="memeblock">
-          <img src="./img/only_request.png" alt="Мем про откладывание первого сайта" />
+      <!-- 3. ПРОВОДНИК -->
+      <section class="section" id="guide">
+        <div class="section-header">
+          <div class="section-kicker">Кто ведёт по маршруту</div>
+          <h2 class="section-title">План для первого шага в IT</h2>
+        </div>
+
+        <p class="section-subtitle">
+          Мы понимаем, что новичку сложно сделать первый шаг в IT. У нас есть простой путь
+          с видеоинструкцией и разбором типичных ошибок, который можно пройти за один вечер
+          и получить первый рабочий сайт.
+        </p>
+
+        <!-- короткий фрагмент инструкции -->
+        <article class="result-card">
+          <div>
+            <div class="result-card__pill">фрагмент инструкции</div>
+            <p class="result-card__meta">
+              Один из шагов внутри видео и текста:
+            </p>
+<pre class="hero-card-code"><code><span class="code-tag">&lt;step</span> <span class="code-attr">id</span>=<span class="code-str">"1"</span><span class="code-tag">&gt;</span>
+  открыть index.html
+  заменить текст на свой
+  сохранить файл
+<span class="code-tag">&lt;/step&gt;</span></code></pre>
+          </div>
+
+          <div class="memeblock">
+            <img src="./img/only_request.png" alt="Иллюстрация работы с первым сайтом" />
+          </div>
+        </article>
+      </section>
+
+      <!-- 4. ПЛАН (3 ШАГА) -->
+      <section class="section" id="plan">
+        <div class="section-header">
+          <div class="section-kicker">Как проходит вечер</div>
+          <h2 class="section-title">План из трёх шагов</h2>
+        </div>
+
+        <article class="steps-card">
+          <ol class="steps-list">
+            <li class="step-item">
+              <div class="step-badge">1</div>
+              <div>
+                <div class="step-content-title">Открыть материалы</div>
+                <p class="step-content-text">
+                  Получаешь доступ к шаблону, видео и инструкции по публикации.
+                </p>
+              </div>
+            </li>
+
+            <li class="step-item">
+              <div class="step-badge">2</div>
+              <div>
+                <div class="step-content-title">Повторить шаги по видео</div>
+                <p class="step-content-text">
+                  Запускаешь видео и повторяешь действия: где открыть файл, что заменить, что сохранить.
+                </p>
+              </div>
+            </li>
+
+            <li class="step-item">
+              <div class="step-badge">3</div>
+              <div>
+                <div class="step-content-title">Опубликовать сайт</div>
+                <p class="step-content-text">
+                  Проходишь по инструкции публикации на GitHub Pages и получаешь ссылку на свой сайт.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </article>
+
+        <!-- CTA сразу после плана -->
+        <div class="hero-actions" style="margin-top:24px;">
+          <button class="btn-primary" id="primaryPlanCta">
+            Начать сейчас
+          </button>
+          <button class="btn-ghost" id="secondaryPlanCta">
+            <span>Посмотреть пример</span>
+          </button>
         </div>
       </section>
 
-      <!-- РЕШЕНИЕ + ПЛАН: как именно выводим из страха -->
-      <section class="section" id="how">
+      <!-- 5. СТАВКИ -->
+      <section class="section" id="stakes">
         <div class="section-header">
-          <div class="section-kicker">Решение</div>
-          <h2 class="section-title">
-            Не «стань разработчиком», а <span>спокойный первый опыт под присмотром.</span>
-          </h2>
-          <p class="section-subtitle">
-            Здесь не требуют понимания кода. От тебя нужно одно:
-            выделить вечер и пройти маршрут «включить видео → повторить → опубликовать».
-          </p>
-        </div>
-
-        <div class="solution-grid">
-          <!-- Шаги -->
-          <article class="steps-card">
-            <h3>Как выглядит твой вечер</h3>
-            <ul class="steps-list">
-              <li class="step-item">
-                <div class="step-badge">1</div>
-                <div>
-                  <div class="step-content-title">Получаешь доступ</div>
-                  <p class="step-content-text">
-                    Сразу после оплаты открываются материалы: HTML-шаблон, видео «повтори за мной»
-                    и инструкция по публикации. Без ожиданий и «мы откроем доступ позже».
-                  </p>
-                </div>
-              </li>
-
-              <li class="step-item">
-                <div class="step-badge">2</div>
-                <div>
-                  <div class="step-content-title">Повторяешь без спешки</div>
-                  <p class="step-content-text">
-                    Ты просто повторяешь шаги с видео: где открыть файл, какой текст заменить,
-                    куда поставить своё фото. В сложных местах есть паузы и пояснения,
-                    чтобы не ловить паники.
-                  </p>
-                </div>
-              </li>
-
-              <li class="step-item">
-                <div class="step-badge">3</div>
-                <div>
-                  <div class="step-content-title">Публикуешь сайт</div>
-                  <p class="step-content-text">
-                    Вместе с видео проходишь публикацию на GitHub Pages. Если что-то идёт не так,
-                    в инструкции есть разбор типичных ошибок и что делать в каждом случае.
-                  </p>
-                </div>
-              </li>
-            </ul>
-
-            <p class="solution-note">
-              Этот формат придуман не для тех, кто «сам разберётся», а для тех, кто
-              хочет пройти первый раз в IT с ощущением, что его не бросили на полпути.
-            </p>
-          </article>
-
-          <!-- Макет результата -->
-          <aside class="mockup-card">
-            <div class="mockup-title">Что в итоге у тебя будет</div>
-            <p>
-              Одностраничный сайт с твоим именем, описанием, чем ты занимаешься,
-              и аккуратным блоком контактов. Это уже не «мечта о сайте», а ссылка,
-              которую можно отправить и открыть с любого устройства.
-            </p>
-
-            <div class="mockup-screenshot">
-              <img class="mockup-card mockup-card-card" src="./img/directory.png" />
-            </div>
-            <div class="mockup-screenshot">
-              <img class="mockup-card mockup-card-card" src="./img/result.png" />
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <!-- РЕЗУЛЬТАТ: кем герой выходит после -->
-      <section class="section" id="result">
-        <div class="section-header">
-          <div class="section-kicker">После этого вечера</div>
-          <h2 class="section-title">
-            Не «я попробую как-нибудь потом», а <span>«вот мой сайт, открой по ссылке».</span>
-          </h2>
+          <div class="section-kicker">Что меняется или не меняется</div>
+          <h2 class="section-title">Два варианта исхода</h2>
         </div>
 
         <article class="result-card">
           <div>
-            <div class="result-pill">конкретные изменения</div>
-            <h3 class="result-title">Ты перестаёшь относиться к IT как к чужой территории</h3>
-            <ul class="result-list">
-              <li>— У тебя есть рабочий сайт, доступный по ссылке в браузере.</li>
-              <li>— Ты один раз проходишь путь от пустого экрана до результата и понимаешь логику процесса.</li>
-              <li>— Страх «я всё сломаю» падает: ты видел, что можно ошибаться и исправлять.</li>
-              <li>— Появляется база, от которой можно идти дальше: дописывать блоки, менять дизайн, пробовать новые идеи.</li>
-            </ul>
+            <div class="result-card__pill">если не начинать</div>
+            <p class="result-card__meta">
+              Ты остаёшься в состоянии «хочу свой сайт, но не умею и боюсь трогать код».
+            </p>
           </div>
 
           <div>
-            <p class="result-list">
-              Первый сайт не делает из тебя разработчика. Он делает другое:
-              убирает ощущение, что IT — это стена, в которую ты не имеешь права стучаться.
+            <div class="result-card__pill">если начать сейчас</div>
+            <p class="result-card__meta">
+              У тебя появляется первый собственный сайт и опыт прохождения пути
+              от файлов на компьютере до опубликованной ссылки.
             </p>
           </div>
         </article>
       </section>
 
-      <!-- ЦЕНА -->
-      <section class="section" id="price">
-        <div class="price-section">
+      <!-- 6. ТРАНСФОРМАЦИЯ ГЕРОЯ -->
+      <section class="section" id="transformation">
+        <div class="section-header">
+          <div class="section-kicker">Итог одного вечера</div>
+          <h2 class="section-title">Было → Стало</h2>
+        </div>
+
+        <article class="result-card">
           <div>
-            <div class="price-badge">доступ к формату с поддержкой</div>
-            <div class="price-main">
-              <span class="price-tag">1900</span>
-              <span class="price-rub">₽</span>
-            </div>
-            <p class="price-text">
-              Ты платишь не за набор файлов, а за
-              <strong>первый спокойный опыт в IT, проведённый до результата</strong>.
-              Один вечер, одно видео, один сайт и ощущение, что ты наконец-то не наблюдаешь,
-              а делаешь.
-            </p>
+            <h3 class="result-title">
+              Было: боялся трогать код и откладывал первый сайт.  
+              Стало: сам прошёл маршрут по видео и опубликовал первый сайт за вечер.
+            </h3>
+
+            <ul class="result-list">
+              <li>— Есть рабочий сайт по ссылке.</li>
+              <li>— Есть понимание базовой структуры: файлы, правка, публикация.</li>
+              <li>— Есть первый опыт работы с HTML-шаблоном под задачу.</li>
+            </ul>
           </div>
 
-          <div class="price-cta">
-            <a href="#" class="btn-primary">Получить доступ за 1900₽</a>
-            <p class="price-note">
-              Доступ к материалам остаётся у тебя. Но смысл этого формата в том,
-              чтобы выделить конкретный вечер и пройти его целиком — от первого шага до опубликованной ссылки.
-            </p>
+          <div class="memeblock" style="margin-top:0;">
+            <img src="./img/before_after.png" alt="До и после первого сайта">
           </div>
+        </article>
+      </section>
+
+      <!-- 7. ЦЕНА / ФОРМАТ ЗА 1900 -->
+      <section class="price-section" id="price">
+        <div>
+          <div class="price-badge">стоимость доступа с видеоформатом</div>
+          <div class="price-main">
+            <span class="price-tag">1900</span><span class="price-rub">₽</span>
+          </div>
+          <p class="price-text">
+            Включает шаблон сайта, видео «повтори за мной» и инструкцию по публикации.
+            Формат рассчитан на один вечер, в котором ты доходишь до опубликованного сайта.
+          </p>
+        </div>
+
+        <div class="price-cta">
+          <button class="btn-primary" id="paymentContainer">
+            Начать сейчас
+          </button>
+          <p class="price-note">
+            Доступ к материалам остаётся у тебя. План простой: выбрать вечер и пройти шаги от начала до ссылки.
+          </p>
         </div>
       </section>
 
-      <!-- FAQ -->
-      <section class="faq-section" id="faq">
+      <!-- 8. ФИНАЛЬНЫЙ CTA -->
+      <section class="section" id="cta-final">
         <div class="section-header">
-          <div class="section-kicker">Частые вопросы</div>
-          <h2 class="section-title">
-            Важное до того, как ты нажмёшь «получить доступ».
-          </h2>
+          <h2 class="section-title">Готов сделать первый сайт с поддержкой</h2>
         </div>
 
-        <div class="faq-grid">
-          <article class="faq-card">
-            <div class="faq-q">Я вообще не понимаю, что такое HTML. Потяну?</div>
-            <div class="faq-a">
-              Да. Материал построен так, что тебе не нужно разбираться в терминах.
-              Твоя задача — включить видео и повторять действия. Сложные места разобраны отдельно.
-            </div>
-          </article>
-
-          <article class="faq-card">
-            <div class="faq-q">А если я не уложусь в один вечер?</div>
-            <div class="faq-a">
-              Материалы остаются у тебя, можно вернуться в любой момент.
-              Но формат задуман как один сфокусированный вечер, чтобы не растягивать
-              первый шаг ещё на несколько месяцев.
-            </div>
-          </article>
-
-          <article class="faq-card">
-            <div class="faq-q">Что, если у меня «не технический» склад ума?</div>
-            <div class="faq-a">
-              Здесь не проверяют «техническость». Задача — дать тебе опыт:
-              открыть инструкцию, пройти шаги, опубликовать сайт и увидеть, что
-              ты способен это сделать без образования и таланта.
-            </div>
-          </article>
+        <div class="hero-actions">
+          <button class="btn-primary">
+            Начать сейчас
+          </button>
+          <button class="btn-ghost">
+            <span>Посмотреть пример</span>
+          </button>
         </div>
       </section>
 
       <!-- ФУТЕР -->
       <footer class="footer">
-        <span>© Первый сайт за вечер</span>
-        <a href="#top">Наверх</a>
+        <div>«Твой первый сайт за вечер» — инструкция и видеоформат для первого результата в IT.</div>
+        <div><a href="#top">Наверх</a></div>
       </footer>
 
     </div>
   </div>
+
+  <script>
+    // Якоря для вторичных действий
+    document.getElementById('secondaryHeroCta')?.addEventListener('click', function () {
+      document.getElementById('plan')?.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('secondaryPlanCta')?.addEventListener('click', function () {
+      document.getElementById('stakes')?.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('primaryHeroCta')?.addEventListener('click', function () {
+      document.getElementById('price')?.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('primaryPlanCta')?.addEventListener('click', function () {
+      document.getElementById('price')?.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
