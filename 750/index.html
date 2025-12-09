@@ -11,113 +11,112 @@
 <body>
   <div class="page">
     <div class="wrapper">
-      <!-- БЛОК 1. ГЛАВНЫЙ ЭКРАН -->
+
+      <!-- ГЛАВНЫЙ ЭКРАН -->
       <header class="hero" id="top">
         <div class="hero-main">
           <div class="tagline">
             <div class="tagline-dot"></div>
-            Первый результат в IT за один вечер
+            Инструкция, которая приводит к результату
           </div>
-          <div class="hero-eyebrow">Инструкция, а не «курс»</div>
+          <div class="hero-eyebrow">Не курс. Действие.</div>
+
           <h1 class="hero-title">
-            Собери свой первый сайт за вечер.<br />
-            <span>Даже если никогда не кодил.</span>
+            Свой первый сайт за вечер.<br />
+            <span>Даже если ты никогда не открывал HTML.</span>
           </h1>
+
           <p class="hero-subtitle">
-            Короткая инструкция, которая даёт тебе реальный результат в IT —
-            без перегруза, без стресса и без часовых видео.
+            Короткая инструкция: что скачать, где поменять текст и как выложить страницу
+            в интернет. Без теории, перегруза и «подготовки».
           </p>
+
           <div class="hero-actions">
-            <button class="btn-primary">
-              Получить инструкцию за 750₽
-            </button>
-            <button class="btn-ghost" onclick="document.getElementById('price').scrollIntoView({behavior:'smooth'})">
-              <span>Сколько это стоит и за что</span>
+            <button class="btn-primary">Получить инструкцию за 750₽</button>
+            <button class="btn-ghost"
+              onclick="document.getElementById('price').scrollIntoView({behavior:'smooth'})">
+              <span>Как это работает и за что деньги</span>
             </button>
           </div>
+
           <p class="hero-note">
-            Один вечер — и у тебя есть <strong>живой сайт в интернете</strong>, который можно показать друзьям,
-            работодателю или себе в зеркало.
+            Один вечер — и у тебя есть <strong>живая ссылка</strong>.
+            Страница, которую можно открыть с телефона или приложить к резюме.
           </p>
         </div>
 
         <div class="hero-visual">
           <div class="hero-card">
             <div class="hero-card-header">
-              <div class="hero-card-pill">фрагмент того, что ты увидишь</div>
+              <div class="hero-card-pill">фрагмент инструкции</div>
               <div>index.html</div>
             </div>
-            <pre class="hero-card-code"><code><span class="code-tag">&lt;section</span> <span class="code-attr">class</span>=<span class="code-str">"hero"</span><span class="code-tag">&gt;</span>
+
+<pre class="hero-card-code"><code><span class="code-tag">&lt;section</span> <span class="code-attr">class</span>=<span class="code-str">"hero"</span><span class="code-tag">&gt;</span>
   <span class="code-tag">&lt;h1&gt;</span>Твой первый сайт<span class="code-tag">&lt;/h1&gt;</span>
-  <span class="code-tag">&lt;p&gt;</span>Сделан за один вечер<span class="code-tag">&lt;/p&gt;</span>
+  <span class="code-tag">&lt;p&gt;</span>Собран за один вечер<span class="code-tag">&lt;/p&gt;</span>
 <span class="code-tag">&lt;/section&gt;</span></code></pre>
 
             <div class="hero-meme">
               <img src="./img/before_after.png"
-                alt="Мем: сверху кадр «Я открываю HTML и ничего не понимаю», снизу кадр «Через 10 минут: меняю текст и радуюсь как будто взломал матрицу»">
+                alt="Мем про первый опыт в HTML">
             </div>
           </div>
         </div>
       </header>
 
-      <!-- БЛОК 2. ПРОБЛЕМА -->
+      <!-- ПРОБЛЕМА -->
       <section class="section" id="problem">
         <div class="section-header">
-          <div class="section-kicker">Почему ты до сих пор не сделал сайт</div>
+          <div class="section-kicker">Почему первый сайт так и не появился</div>
           <h2 class="section-title">
-            Не потому что ты «тупой». <span>Потому что тебя перегружали.</span>
+            Дело не в том, что ты «не понимаешь». <span>Тебя сразу перегружали.</span>
           </h2>
           <p class="section-subtitle">
-            Вместо простого действия тебе каждый раз подсовывали лекции на час, терминологию и «правильный путь в IT».
-            Здесь наоборот: минимум слов, максимум кнопок «сохранить».
+            Ты хотел сделать одну страницу — а получал час лекций, термины и «правильный путь».
+            Здесь наоборот: ничего лишнего. Только шаги, которые приводят к результату.
           </p>
         </div>
 
         <div class="memeblock">
           <img src="./img/only_request.png"
-            alt="Мем: человек задаёт простой вопрос, а получает огромный сложный туториал. Подпись: «Хотел сделать простую страницу — попал на лекцию по архитектуре всего интернета»">
-
-          <!--
-            КАРТИНКА-МЕМ 2 (проблема)
-            ВСТАВИТЬ СЮДА:
-            <img src="./img/meme-long-videos.png" alt="Мем: человек задаёт простой вопрос, а получает огромный сложный туториал. Подпись: «Хотел сделать простую страницу — попал на лекцию по архитектуре всего интернета»">
-          -->
+            alt="Мем о перегрузке туториалами">
         </div>
+
         <div class="problem-grid">
           <article class="problem-card">
             <div class="problem-label">Внешняя проблема</div>
             <p class="problem-text">
-              Ты пробовал смотреть видео, но они слишком длинные или сложные.
-              <span> Через 15 минут хочется закрыть вкладку и «вернуться потом».</span>
+              Материалы для новичков слишком длинные. Уже через 10 минут хочется отложить.
             </p>
           </article>
+
           <article class="problem-card">
             <div class="problem-label">Внутренняя проблема</div>
             <p class="problem-text">
-              Кажется, что IT — это не твоё.
-              <span> Как будто «нормальные люди» этим не занимаются, если у них нет профильного образования.</span>
+              Создаётся ощущение, будто вход в IT — закрытая территория «для подготовленных».
             </p>
           </article>
+
           <article class="problem-card">
             <div class="problem-label">Философская проблема</div>
             <p class="problem-text">
-              Доступ к IT должен быть для всех, а не только для «избранных».
-              <span> Но почему-то тебя всё время убеждали в обратном.</span>
+              Технологии открыты всем, но объясняют их так, будто нужны допуски.
             </p>
           </article>
         </div>
       </section>
 
-      <!-- БЛОК 3–4. РЕШЕНИЕ + ЧТО ВНУТРИ -->
+      <!-- РЕШЕНИЕ -->
       <section class="section" id="solution">
         <div class="section-header">
-          <div class="section-kicker">Как это работает</div>
+          <div class="section-kicker">Как всё происходит</div>
           <h2 class="section-title">
-            Никаких «когда-нибудь потом». <span>Сегодня скачал — сегодня выложил сайт.</span>
+            Скачал сегодня — сегодня же выложил страницу.
           </h2>
           <p class="section-subtitle">
-            Здесь нет теории ради теории. Только действия, которые ведут от нуля до живой страницы,
-            которую видят другие люди.
+            Без теоретических блоков. Только последовательность действий,
+            которая ведёт от нуля до рабочей ссылки.
           </p>
         </div>
 
@@ -125,78 +124,78 @@
           <div>
             <article class="steps-card">
               <h3 class="section-title" style="font-size:18px;margin-bottom:10px;">
-                Пошаговая схема без перегруза
+                Пошаговая схема
               </h3>
+
               <ul class="steps-list">
                 <li class="step-item">
                   <div class="step-badge">1</div>
                   <div>
-                    <div class="step-content-title">Скачиваешь готовый шаблон</div>
+                    <div class="step-content-title">Скачиваешь шаблон</div>
                     <p class="step-content-text">
-                      Файлы уже настроены, структура собрана, всё открывается и работает.
-                      Тебе не нужно «строить» сайт с нуля.
+                      Файлы уже собраны и настроены. Открываешь — и всё работает.
                     </p>
                   </div>
                 </li>
+
                 <li class="step-item">
                   <div class="step-badge">2</div>
                   <div>
-                    <div class="step-content-title">Меняешь пару строк</div>
+                    <div class="step-content-title">Меняешь под себя</div>
                     <p class="step-content-text">
-                      Открываешь файл, меняешь текст под себя, добавляешь своё фото.
-                      Даже если никогда не видел HTML — по инструкции это делается спокойно.
+                      Текст, имя, фото — всё в одном понятном месте. Никаких сложных команд.
                     </p>
                   </div>
                 </li>
+
                 <li class="step-item">
                   <div class="step-badge">3</div>
                   <div>
-                    <div class="step-content-title">Заливаешь сайт в интернет</div>
+                    <div class="step-content-title">Заливаешь сайт</div>
                     <p class="step-content-text">
-                      Следуешь простой инструкции: нажал, загрузил, отправил — сайт стал доступен по ссылке.
-                      Никаких терминалов и странных команд.
+                      Короткая инструкция показывает, куда нажать, чтобы страница получила ссылку.
                     </p>
                   </div>
                 </li>
+
                 <li class="step-item">
                   <div class="step-badge">4</div>
                   <div>
-                    <div class="step-content-title">Показываешь результат</div>
+                    <div class="step-content-title">Проверяешь результат</div>
                     <p class="step-content-text">
-                      У тебя есть ссылка, которую можно отправить друзьям, работодателю или сохранить в резюме.
-                      Это не «обещание», а реальный результат.
+                      Готовая ссылка работает в браузере. Это уже твой сайт.
                     </p>
                   </div>
                 </li>
               </ul>
+
               <p class="solution-note">
-                <strong>Важно:</strong> никакой теории «про будущее». Только действие «открываем файл → меняем текст →
-                добавляем фото → выкладываем сайт».
+                Никаких «разберём позже». Только то, что приводит к результату сегодня.
               </p>
             </article>
 
             <article class="steps-card" style="margin-top:14px;">
               <h3 class="section-title" style="font-size:18px;margin-bottom:8px;">
-                Что именно ты получаешь внутри
+                Что внутри
               </h3>
+
               <ul class="steps-list">
                 <li class="step-item">
                   <div class="step-badge">A</div>
                   <div>
                     <div class="step-content-title">Готовый шаблон сайта</div>
                     <p class="step-content-text">
-                      Чистый, лёгкий HTML+CSS — без лишнего кода, без «чёрной магии».
-                      Страница уже выглядит аккуратно, остаётся только подставить себя.
+                      Минималистичный HTML+CSS, который легко менять под себя.
                     </p>
                   </div>
                 </li>
+
                 <li class="step-item">
                   <div class="step-badge">B</div>
                   <div>
-                    <div class="step-content-title">Пошаговую инструкцию</div>
+                    <div class="step-content-title">Пошаговая инструкция</div>
                     <p class="step-content-text">
-                      Короткая, понятная последовательность действий с картинками:
-                      что открыть, куда нажать и какой текст изменить, чтобы увидеть результат.
+                      Короткая последовательность действий с картинками. Повторяешь — получаешь результат.
                     </p>
                   </div>
                 </li>
@@ -205,116 +204,102 @@
           </div>
 
           <aside class="mockup-card">
-            <div class="mockup-title">визуал для блока «что внутри»</div>
-            <p>
-              Скриншот папки с проектом и мокап сайта.
-              сверху — окно проводника/папки с файлами (<code>index.html</code>, <code>style.css</code>),
-              снизу — маленький скрин готовой страницы.
-            </p>
+            <div class="mockup-title">визуал блока</div>
+            <p>Скриншот папки проекта и фрагмент готовой страницы.</p>
+
             <div class="mockup-screenshot">
-                <img class="mockup-card mockup-card-card" src="./img/directory.png" />
+              <img src="./img/directory.png" />
             </div>
+
             <div class="mockup-screenshot">
-                    <img class="mockup-card mockup-card-card" src="./img/result.png" />
-                    </div>
-                
-                <!--
-              РЕКОМЕНДАЦИЯ ПО КАРТИНКЕ:
-              — Слева: реальный скрин папки проекта (видны имена файлов).
-              — Справа: уменьшенный скрин готового сайта.
-              Посыл: «вот столько файлов — и вот такой результат».
-            -->
+              <img src="./img/result.png" />
+            </div>
           </aside>
         </div>
       </section>
 
-      <!-- БЛОК 5. РЕЗУЛЬТАТ -->
+      <!-- РЕЗУЛЬТАТ -->
       <section class="section" id="result">
         <div class="section-header">
-          <div class="section-kicker">Результат, а не «ещё одна папка на диске»</div>
+          <div class="section-kicker">Что меняется за один вечер</div>
           <h2 class="section-title">
-            Ты покупаешь не файл. <span>Ты покупаешь первую победу в IT.</span>
+            Ты покупаешь не файлы. <span>Ты покупаешь первый шаг в IT.</span>
           </h2>
         </div>
 
         <article class="result-card">
           <div>
-            <div class="result-pill">что меняется за один вечер</div>
+            <div class="result-pill">последствия одного действия</div>
+
             <h3 class="result-title">
-              Сегодня у тебя есть только желание.<br />
-              Через пару часов у тебя есть ссылка на свой сайт.
+              Сейчас — ноль опыта.  
+              Через пару часов — рабочая ссылка на твой сайт.
             </h3>
+
             <ul class="result-list">
-              <li>— Сегодня вечером у тебя будет свой сайт в интернете, который можно открыть с телефона.</li>
-              <li>— Ты перестаёшь смотреть на HTML как на что-то для «избранных».</li>
-              <li>— Ты чувствуешь: «я могу работать с IT, это реально».</li>
-              <li>— Это первый шаг, который открывает следующие: портфолио, резюме, свои проекты.</li>
+              <li>— Готовая страница, которую можно открыть с телефона.</li>
+              <li>— Уходит страх перед HTML.</li>
+              <li>— Понимание, что с IT можно работать без паники.</li>
+              <li>— Первая точка для портфолио и резюме.</li>
             </ul>
           </div>
+
           <div>
             <div class="memeblock" style="margin-top:0;">
-              <img src="./img/before_lite.png"
-                alt="Мем: сначала герой боится кода, потом жмёт кнопку «Сохранить» и радуется, что ничего не взорвалось">
-              <!--
-                КАРТИНКА-МЕМ 3 (результат)
-                ВСТАВИТЬ СЮДА:
-                <img src="./img/meme-save-button.png" alt="Мем: сначала герой боится кода, потом жмёт кнопку «Сохранить» и радуется, что ничего не взорвалось">
-              -->
+              <img src="./img/before_lite.png" alt="Мем о первом результате">
             </div>
           </div>
         </article>
       </section>
 
-      <!-- БЛОК 6. ЦЕНА -->
+      <!-- ЦЕНА -->
       <section class="price-section" id="price">
         <div>
-          <div class="price-badge">стоимость первого шага</div>
+          <div class="price-badge">стоимость шага</div>
           <div class="price-main">
             <span class="price-tag">750</span><span class="price-rub">₽</span>
           </div>
           <p class="price-text">
-            Это стоимость одного шага, который ты откладывал годами.
-            Ты не «учишься где-то в теории» — ты получаешь результат сразу.
-            <strong>Для первой победы в IT — это идеальная точка входа.</strong>
+            Один вечер, который даёт реальный результат.  
+            Ты не изучаешь теорию — ты получаешь рабочую страницу.
           </p>
         </div>
+
         <div class="price-cta">
-          <button class="btn-primary" id="paymentContainer">
-            Взять и сделать сегодня
-          </button>
+          <button class="btn-primary" id="paymentContainer">Сделать сегодня</button>
           <p class="price-note">
-            Никаких подписок, марафонов и групп. Один вечер, одна инструкция, один сайт, который можно показать.
+            Без подписок и марафонов. Один шаг — один результат.
           </p>
         </div>
       </section>
 
-      <!-- БЛОК 7. FAQ -->
+      <!-- FAQ -->
       <section class="faq-section" id="faq">
         <div class="section-header" style="margin-bottom:18px;">
-          <div class="section-kicker">коротко по делу</div>
-          <h2 class="section-title">FAQ — частые вопросы, без воды</h2>
+          <div class="section-kicker">коротко</div>
+          <h2 class="section-title">FAQ — без воды</h2>
         </div>
+
         <div class="faq-grid">
           <article class="faq-card">
-            <div class="faq-q">Нужны ли какие-то знания?</div>
+            <div class="faq-q">Нужны ли знания?</div>
             <div class="faq-a">
-              Нет. <span>Вообще.</span> Если ты умеешь открыть браузер и файл —
-              этого достаточно, остальное расписано в инструкции.
+              Нет. Если ты можешь открыть браузер и файл — этого достаточно.
             </div>
           </article>
+
           <article class="faq-card">
             <div class="faq-q">Сколько времени займёт?</div>
             <div class="faq-a">
-              Один вечер. Не «месяц обучения» и не «3 недели марафона».
-              Сел, сделал, выложил — и пошёл дальше по своим делам.
+              Один вечер. Не неделя и не месяц.
             </div>
           </article>
+
           <article class="faq-card">
-            <div class="faq-q">Я могу что-то сломать?</div>
+            <div class="faq-q">Можно что-то сломать?</div>
             <div class="faq-a">
-              Нет. HTML не ломается так, как ты думаешь.
-              В худшем случае страница просто выглядит странно —
-              <span>и это тоже часть процесса</span>. Всегда можно откатить шаг назад.
+              В худшем случае страница будет выглядеть странно.
+              Это нормально. Всегда можно вернуть всё назад.
             </div>
           </article>
         </div>
@@ -323,51 +308,11 @@
       <!-- ФУТЕР -->
       <footer class="footer">
         <div>«Твой первый сайт за вечер» — инструкция для тех, кто устал откладывать.</div>
-        <div>Кнопка сверху — для действий. Вопросы — через контакт на основном сайте.</div>
+        <div>Кнопка сверху — для действий. Контакты — на основном сайте.</div>
       </footer>
+
     </div>
   </div>
-  <script>    
-  const initConfig = {
-    terminalKey: '1759021134395DEMO', // Значение terminalKey из личного кабинета
-    product: 'eacq',
-    features: {
-      iframe: {
-        /**
-         * Если используется параметр container, скрипт встроит iframe в этот элемент
-         * На странице должен существовать элемент с id="paymentContainer"
-         */
-        container: document.getElementById('paymentContainer'),         
-        /**
-         * Функция paymentStartCallback должна возвращать Promise, который резолвит ссылку платежной формы — PaymentURL
-         *
-         * В этой функции должен вызываться ваш бэкенд-сервис — в него передается внутренний orderId
-         * Бэкенд-сервис находит необходимые для запроса метода «Инициировать платеж» поля (например, сумма) внутри вашей системы и отправляет запрос 
-         * PaymentURL из ответа должен быть возвращен во frontend в paymentStartCallback
-         *
-         * Пример:
-         * const res = await new PaymentIntegration.Helpers().request(URL, 'POST', INIT_PARAMS);
-         * return res.PaymentURL;
-         *
-         * Переменная PaymentIntegration содержит класс-помощник Helpers c методом request для отправки запросов на бэкенд
-         * В примере URL — это URL вашего бэкенд-сервиса, который вызовет метод «Инициировать платеж» и вернет PaymentURL
-         *
-         * @param {OverlayType} paymentType — способ оплаты, выбранный пользователем
-         * @returns {Promise<string>}
-         */
-        paymentStartCallback: async () => {
-          const res = await new PaymentIntegration.Helpers().request(URL, 'POST', INIT_PARAMS);
-          return res.PaymentURL;
-        },
-      },
-    },
-  };
-  
-  function onPaymentIntegrationLoad() {
-    PaymentIntegration.init(initConfig).then().catch();
-  }
-</script>
-  <script src="https://integrationjs.tbank.ru/integration.js" onload="onPaymentIntegrationLoad()" async></script>
-</body>
 
+</body>
 </html>
