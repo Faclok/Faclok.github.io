@@ -1,154 +1,406 @@
-<!DOCTYPE html>
+<!-- index.html (vinokurov-it.ru) -->
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <title>Материалы курса — Первый сайт за вечер</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="./style.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Vinokurov IT — первый сайт без страха</title>
+    <meta
+      name="description"
+      content="Николай Винокуров — разработчик, ИП. Быстрый результат: первый сайт. Лид-материалы и продукты 750/1900."
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-  <header class="hero">
-    <div class="hero-inner">
-      <p class="hero-kicker">для дизайнеров и разработчиков</p>
-      <h1>Материалы для разработки и обучения</h1>
-      <p class="hero-lead">
-        Здесь собраны ТЗ для дизайнеров и шаблоны сайтов, которые получают ученики после оплаты.
-      </p>
+  <body>
+    <!-- Фиксированный фон: не “обрывается” при смене секций -->
+    <div class="bg" aria-hidden="true">
+      <div class="bg__layer bg__layer--a"></div>
+      <div class="bg__layer bg__layer--b"></div>
+      <div class="bg__noise"></div>
+      <div class="bg__grid"></div>
     </div>
-  </header>
 
-  <main class="main">
+    <header class="topbar">
+      <div class="wrap topbar__inner">
+        <a class="brand" href="#top" aria-label="На верх">
+          <span class="brand__sigil" aria-hidden="true"></span>
+          <span class="brand__name">Vinokurov IT</span>
+          <span class="brand__tag">первый сайт без страха</span>
+        </a>
 
-    <section class="block">
-      <header class="block-header">
-        <h2>Технические задания</h2>
-        <p class="desc">
-          Два уровня сложности: <strong>750₽</strong> — базовый лендинг. <strong>1900₽</strong> — расширенный продукт с анимациями и сложными сценариями.
-        </p>
-      </header>
+        <nav class="nav" aria-label="Навигация">
+          <a class="nav__link" href="#about">Кто</a>
+          <a class="nav__link" href="#proof">Опыт</a>
+          <a class="nav__link" href="#reviews">Отзывы</a>
+          <a class="nav__link" href="#choose">Выбрать</a>
+        </nav>
 
-      <div class="cards">
-
-        <article class="card">
-          <h3>ТЗ для 750₽</h3>
-          <p>
-            Страница-результат + три шаблона. Чистая структура, минимум сложностей — можно сверстать за один вечер.
-          </p>
-
-          <div class="card-meta">
-            <span class="meta-pill">уровень: базовый</span>
-            <span class="meta-pill">1 страница + 3 шаблона</span>
-          </div>
-
-          <div class="card-actions">
-            <a href="750/tz_750.docx" class="btn" download>Скачать ТЗ (750)</a>
-            <!-- Макет уже существует по пути /750/index.html -->
-            <a href="750/index.html" class="link-secondary" target="_blank" rel="noopener">
-              Открыть макет страницы
-            </a>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>ТЗ для 1900₽</h3>
-          <p>
-            Продвинутое оформление, motion-эффекты, акцент на эмоции и динамику. Подходит под более «дорогой» опыт.
-          </p>
-
-          <div class="card-meta">
-            <span class="meta-pill meta-pill--dark">уровень: продвинутый</span>
-            <span class="meta-pill meta-pill--dark">сложные сценарии</span>
-          </div>
-
-          <div class="card-actions">
-            <a href="1900/tz_1900.docx" class="btn btn-outline" download>Скачать ТЗ (1900)</a>
-              <a href="1900/index.html" class="link-secondary" target="_blank" rel="noopener">
-              Открыть макет страницы
-            </a>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <section class="block">
-      <header class="block-header">
-        <h2>Что получает человек после покупки</h2>
-        <p class="desc">
-          Каждый шаблон — это полный HTML и CSS, который ученик сможет отредактировать. Дизайн минималистичный, логика прозрачная.
-        </p>
-      </header>
-
-      <div class="templates-grid">
-        <div class="templates-column">
-          <h3 class="sub">Шаблоны пакета 750₽</h3>
-          <ul class="files">
-            <li>
-              <a href="750/templates/template_1.html" target="_blank">
-                template_1.html — личное резюме
-              </a>
-              <span class="file-note">Стартовый сайт-квиз о человеке</span>
-            </li>
-            <li>
-              <a href="750/templates/template_2.html" target="_blank">
-                template_2.html — результат за вечер
-              </a>
-              <span class="file-note">Фокус на демонстрацию результата</span>
-            </li>
-            <li>
-              <a href="750/templates/template_3.html" target="_blank">
-                template_3.html — базовый лендинг
-              </a>
-              <span class="file-note">Чистая структура блоков</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="templates-column">
-          <h3 class="sub">Шаблоны пакета 1900₽</h3>
-          <ul class="files">
-            <li>
-              <a href="1900/templates/template_1.html" target="_blank">
-                template_1.html — storytelling-лендинг
-              </a>
-              <span class="file-note">История, которая ведёт к офферу</span>
-            </li>
-            <li>
-              <a href="1900/templates/template_2.html" target="_blank">
-                template_2.html — сайт с анимациями по скроллу
-              </a>
-              <span class="file-note">Поэтапные сцены и переходы</span>
-            </li>
-            <li>
-              <a href="1900/templates/template_3.html" target="_blank">
-                template_3.html — сложный CSS + JS
-              </a>
-              <span class="file-note">Максимум возможностей для «поиграться»</span>
-            </li>
-          </ul>
+        <div class="topbar__cta">
+          <a class="btn btn--ghost" href="/lid/1">Лид-материалы</a>
+          <a class="btn btn--primary" href="#choose">Купить</a>
         </div>
       </div>
-    </section>
+    </header>
 
-    <section class="block">
-      <header class="block-header">
-        <h2>Пример, как будут проходить обучение</h2>
-        <p class="desc">
-          Полноценная страница с шагами — так ученик двигается от нуля к готовому сайту.
-        </p>
-      </header>
+    <main id="top">
+      <!-- HERO -->
+      <section class="screen hero">
+        <div class="wrap hero__grid">
+          <div class="hero__left">
+            <div class="pill">
+              <span class="pill__dot" aria-hidden="true"></span>
+              домен: vinokurov-it.ru • без “структуры файлов” • нормальная подача
+            </div>
 
-      <a href="./lesson.html" class="lesson-link" target="_blank" rel="noopener">
-        Открыть пример прохождения урока
-      </a>
-    </section>
+            <h1 class="h1">
+              Ты пришёл за сайтом.
+              <span class="h1__accent">Получишь сайт.</span>
+              Не лекцию, не мотивацию, не “путь героя на 10 недель”.
+            </h1>
 
-  </main>
+            <p class="lead">
+              Я <strong>Николай Винокуров</strong>. Разработчик и ИП.
+              Здесь всё устроено как у взрослых: короткий маршрут, быстрый результат,
+              без попыток выглядеть “стартапом из космоса”.
+            </p>
 
-  <footer class="footer">
-    <p>© Первый сайт за вечер</p>
-  </footer>
+            <div class="hero__kpi" role="list">
+              <div class="kpi" role="listitem">
+                <div class="kpi__v">1 вечер</div>
+                <div class="kpi__t">и у тебя ссылка на сайт</div>
+              </div>
+              <div class="kpi" role="listitem">
+                <div class="kpi__v">0 стыда</div>
+                <div class="kpi__t">ошибки — часть процесса</div>
+              </div>
+              <div class="kpi" role="listitem">
+                <div class="kpi__v">план</div>
+                <div class="kpi__t">без “сначала изучи всё”</div>
+              </div>
+            </div>
 
-</body>
+            <div class="hero__actions">
+              <a class="btn btn--primary btn--big" href="/lid/1">Забрать лид</a>
+              <a class="btn btn--ghost btn--big" href="#choose">Выбрать 750/1900</a>
+            </div>
+
+            <div class="micro">
+              Власть тут простая: ты контролируешь процесс, а не “случайный видос на YouTube”.
+            </div>
+          </div>
+
+          <aside class="hero__right">
+            <div class="card profile">
+              <div class="profile__top">
+                <div class="avatar" aria-label="Фото Николая">
+                  <!-- Вставь фотку: /assets/me.jpg (или поменяй путь ниже) -->
+                  <div class="avatar__img" style="background-image:url('/assets/me.png');"></div>
+                  <div class="avatar__glow" aria-hidden="true"></div>
+                </div>
+
+                <div class="profile__meta">
+                  <div class="profile__name">Николай</div>
+                  <div class="profile__role">разработчик • ИП</div>
+                  <div class="profile__line">
+                    <span class="dot" aria-hidden="true"></span>
+                    системный подход, без театра
+                  </div>
+                </div>
+              </div>
+
+              <div class="profile__body">
+                <div class="quote">
+                  <div class="quote__mark" aria-hidden="true">“</div>
+                  <p class="quote__text">
+                    Я не продаю надежду. Я продаю понятный результат.
+                    Если ты сделал — у тебя есть сайт. Если не сделал — значит не делал.
+                  </p>
+                </div>
+
+                <div class="badges" aria-label="Факты">
+                  <span class="badge">ИП</span>
+                  <span class="badge">практика</span>
+                  <span class="badge">быстрый старт</span>
+                  <span class="badge">без воды</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card meme">
+              <div class="meme__head">
+                <div class="meme__title">Мем-охранник входа</div>
+                <div class="meme__hint">поменяешь на свой</div>
+              </div>
+
+              <div class="meme__img" role="img" aria-label="Заглушка для мема">
+                <!--
+                  Поставь сюда картинку:
+                  <img src="/assets/meme.png" alt="..." />
+                  Сейчас — заглушка.
+                -->
+                <div class="meme__placeholder">
+                  <div class="meme__big">НЕ</div>
+                  <div class="meme__small">надо быть готовым</div>
+                  <div class="meme__small">надо начать</div>
+                </div>
+              </div>
+
+              <div class="meme__cap">
+                Этот блок нужен, чтобы сразу считывался стиль: спокойно, дерзко, по делу.
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="screen about">
+        <div class="wrap split">
+          <div>
+            <h2 class="h2">Кто я и что ты здесь получишь</h2>
+            <p class="p">
+              Я Николай, разработчик. Я делаю продукт для новичков, которые хотят
+              <strong>первый результат</strong> и не хотят превращать старт в “ещё одну попытку”.
+            </p>
+
+            <div class="cards2">
+              <article class="card mini">
+                <div class="mini__t">Сайт в интернете</div>
+                <div class="mini__p">
+                  Не макет, не “почти сделал”. Нормальная ссылка, которую можно показать.
+                </div>
+              </article>
+              <article class="card mini">
+                <div class="mini__t">Маршрут без тумана</div>
+                <div class="mini__p">
+                  Куда нажать, что создать, что вставить, как опубликовать. Без лирики.
+                </div>
+              </article>
+              <article class="card mini">
+                <div class="mini__t">Контроль</div>
+                <div class="mini__p">
+                  Ты понимаешь, что происходит. Не “магия”, не “скопируй и молись”.
+                </div>
+              </article>
+              <article class="card mini">
+                <div class="mini__t">Уровень “можно развивать”</div>
+                <div class="mini__p">
+                  После первого сайта появляется почва: дальше уже можно усиливать дизайн/код.
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="card manifesto">
+            <div class="manifesto__t">Моя позиция</div>
+            <ul class="manifesto__list">
+              <li><span class="mark">1</span> <span class="manifesto__span">Не обещаю “станешь разработчиком”. Даю первую победу.</span></li>
+              <li><span class="mark">2</span> <span class="manifesto__span">Не делаю из тебя “ученика”. Ты — человек, который делает.</span></li>
+              <li><span class="mark">3</span> <span class="manifesto__span">Не прячу сложность, я её дозирую.</span></li>
+              <li><span class="mark">4</span> <span class="manifesto__span">Не тяну время. Результат сегодня.</span></li>
+            </ul>
+
+            <div class="manifesto__cta">
+              <a class="btn btn--primary" href="/lid/1">Сначала лид</a>
+              <a class="btn btn--ghost" href="#choose">Сразу выбрать</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROOF -->
+      <section id="proof" class="screen proof">
+        <div class="wrap">
+          <div class="head">
+            <h2 class="h2">Опыт без позы</h2>
+            <p class="sub">
+              Тут не “я гуру”. Тут факты, чтобы ты понимал, кто ведёт и почему маршрут рабочий.
+            </p>
+          </div>
+
+          <div class="timeline">
+            <div class="card step">
+              <div class="step__n">01</div>
+              <div class="step__t">Разработчик</div>
+              <div class="step__p">Коммерческий опыт, реальные задачи, реальная ответственность.</div>
+            </div>
+            <div class="card step">
+              <div class="step__n">02</div>
+              <div class="step__t">ИП</div>
+              <div class="step__p">Делаю продукты и отвечаю за качество. Не “проект на коленке”.</div>
+            </div>
+            <div class="card step">
+              <div class="step__n">03</div>
+              <div class="step__t">Системность</div>
+              <div class="step__p">Шаги построены так, чтобы новичок не утонул в терминах.</div>
+            </div>
+            <div class="card step">
+              <div class="step__n">04</div>
+              <div class="step__t">Результат как якорь</div>
+              <div class="step__p">Сначала “сайт живой”, потом красота и усложнения. Так работает психика.</div>
+            </div>
+          </div>
+
+          <div class="powerline">
+            <div class="powerline__l">
+              <div class="powerline__t">Маленькая “власть”</div>
+              <div class="powerline__p">
+                Власть — это когда ты не зависишь от вдохновения. Ты повторяешь шаги и получаешь выход.
+              </div>
+            </div>
+            <div class="powerline__r">
+              <a class="btn btn--primary" href="#choose">Окей, выбрать</a>
+              <a class="btn btn--ghost" href="/lid/1">Сначала лид</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REVIEWS -->
+      <section id="reviews" class="screen reviews">
+        <div class="wrap">
+          <div class="head">
+            <h2 class="h2">Отзывы</h2>
+            <p class="sub">
+              Сейчас стоят макеты. Заменишь текст на реальные скрины/фразы — и блок готов.
+            </p>
+          </div>
+
+          <div class="reviews__grid">
+            <article class="card review">
+              <div class="review__top">
+                <div class="review__name">Анонимный новичок</div>
+                <div class="review__tag">после первого вечера</div>
+              </div>
+              <p class="review__text">
+                “Я думал, что не вывезу. А у меня реально появилась ссылка на сайт. Стало спокойнее.”
+              </p>
+              <div class="review__meta">
+                <span class="chip">результат</span>
+                <span class="chip">без перегруза</span>
+              </div>
+            </article>
+
+            <article class="card review">
+              <div class="review__top">
+                <div class="review__name">Человек с “нулём”</div>
+                <div class="review__tag">самое важное</div>
+              </div>
+              <p class="review__text">
+                “Понравилось, что ничего не надо ‘понимать заранее’. Делал шаги и всё собралось.”
+              </p>
+              <div class="review__meta">
+                <span class="chip">пошагово</span>
+                <span class="chip">понятно</span>
+              </div>
+            </article>
+
+            <article class="card review">
+              <div class="review__top">
+                <div class="review__name">Бывший “перфекционист”</div>
+                <div class="review__tag">отпустило</div>
+              </div>
+              <p class="review__text">
+                “Впервые разрешил себе сделать криво — и это сработало. Потом уже допилил.”
+              </p>
+              <div class="review__meta">
+                <span class="chip">анти-страх</span>
+                <span class="chip">движение</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="note">
+            Хочешь мощнее: вставляй 1–2 скрина из Telegram/чатов и подпись “как есть”.
+            Не полируй. Сырые отзывы продают лучше вылизанных.
+          </div>
+        </div>
+      </section>
+
+      <!-- CHOOSE -->
+      <section id="choose" class="screen choose">
+        <div class="wrap">
+          <div class="head">
+            <h2 class="h2">Выбор</h2>
+            <p class="sub">
+              Два уровня. Оба — про сайт. Разница — в глубине сопровождения и “антистрахе”.
+            </p>
+          </div>
+
+          <div class="pricing">
+            <article class="card price price--light">
+              <div class="price__head">
+                <div class="price__name">Пакет 750</div>
+                <div class="price__sum">750₽</div>
+              </div>
+              <ul class="price__list">
+                <li>быстрый старт</li>
+                <li>минимум лишнего</li>
+                <li>первый сайт + публикация</li>
+                <li>шаблоны для старта</li>
+              </ul>
+              <a class="btn btn--primary btn--big" href="/led/1">Перейти к 750</a>
+              <div class="price__hint">Для тех, кто готов сделать шаг без переговоров с собой.</div>
+            </article>
+
+            <article class="card price price--dark">
+              <div class="price__badge">усиленный</div>
+              <div class="price__head">
+                <div class="price__name">Пакет 1900</div>
+                <div class="price__sum">1900₽</div>
+              </div>
+              <ul class="price__list">
+                <li>встроенный “антистрах”</li>
+                <li>больше поддержки в шагах</li>
+                <li>пояснения “почему так”</li>
+                <li>шаблоны посильнее</li>
+              </ul>
+              <a class="btn btn--primary btn--big" href="/led/2">Перейти к 1900</a>
+              <div class="price__hint">Для тех, кто застревает на старте и хочет гарантированно дойти.</div>
+            </article>
+          </div>
+
+          <footer class="footer">
+            <div class="footer__l">
+              <div class="footer__t">Николай Винокуров • разработчик • ИП</div>
+              <div class="footer__m">vinokurov-it.ru</div>
+            </div>
+            <div class="footer__r">
+              <a class="btn btn--ghost" href="/lid/1">Лид</a>
+              <a class="btn btn--ghost" href="#top">Вверх</a>
+            </div>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // Микро-полировка: подсветка активного пункта меню по секциям
+      (function () {
+        const links = Array.from(document.querySelectorAll(".nav__link"));
+        const sections = links
+          .map((a) => document.querySelector(a.getAttribute("href")))
+          .filter(Boolean);
+
+        const obs = new IntersectionObserver(
+          (entries) => {
+            const visible = entries
+              .filter((e) => e.isIntersecting)
+              .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+            if (!visible) return;
+
+            links.forEach((a) => a.classList.remove("is-active"));
+            const id = "#" + visible.target.id;
+            const a = links.find((x) => x.getAttribute("href") === id);
+            if (a) a.classList.add("is-active");
+          },
+          { threshold: [0.25, 0.5, 0.75] }
+        );
+
+        sections.forEach((s) => obs.observe(s));
+      })();
+    </script>
+  </body>
 </html>
